@@ -1,0 +1,45 @@
+@use '@angular/material' as mat;
+
+
+$light-theme: mat.define-theme((color: (theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      )));
+
+$dark-theme: mat.define-theme((color: (theme-type: dark,
+        primary: mat.$magenta-palette,
+        tertiary: mat.$violet-palette,
+      )));
+
+$theme: mat.define-theme((
+color: (
+    theme-type: light,
+    primary: mat.$yellow-palette,
+),
+typography: (
+    brand-family: 'Comic Sans',
+    
+),
+density: (
+    scale: -1
+)
+));      
+    
+
+@include mat.core();
+@include mat.color-variants-backwards-compatibility($light-theme);
+
+@mixin theme($light-theme) {
+  app-navbar {
+    color: mat.get-theme-color($light-theme, primary);
+
+    mat-toolbar {
+      background: mat.get-theme-color($light-theme, primary-container);
+    }
+  }
+}
+
+:root {
+  @include mat.all-component-themes($light-theme);
+  @include theme($light-theme);
+}

@@ -20,11 +20,17 @@
           display: none;
         }
       }
+
     }
     .nav-item.padding-changed {
         padding: 25px 50px; /* New padding when clicked */
       }
+    a{
+      color: #fff;
+    }
   }
-
+.active{
+  background-color: rgb(1, 38, 69);
+}
 
 
