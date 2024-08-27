@@ -1,0 +1,240 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Bank Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Others Details</b>
+      </p-divider>
+
+<div class="signPhoto" style="display: flex; justify-content: center; margin-top: 50px; margin-bottom: 80px;">
+    <p-toast />
+   <p-fileUpload 
+        mode="basic" 
+        chooseLabel="Choose" 
+        chooseIcon="pi pi-upload"
+        name="demo[]" 
+        url="https://www.primefaces.org/cdn/api/upload.php" 
+        accept="image/*" 
+        maxFileSize="1000000"/><br>
+        <span class="caption">Upload Passpord Size Photo</span>
+        <p-toast />
+        <p-fileUpload 
+            mode="basic" 
+            chooseLabel="Choose" 
+            chooseIcon="pi pi-upload"
+            name="demo[]" 
+            url="https://www.primefaces.org/cdn/api/upload.php" 
+            accept="image/*" 
+            maxFileSize="1000000"/><br>
+            <span class="caption">Upload Signature Photo</span>
+    </div>
+    <p-divider align="center" type="solid">
+        <!-- <b  class="fnt20">Others Details</b> -->
+        </p-divider>
+    <!-- <div class="row mb40">
+        <div class="form-group col-md-5">
+          <label for="inputEmail4">Whether Previously appointed under the scheme through State Govt or CSU?<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-2">
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
+              </mat-radio-group>
+        </div>
+      
+      </div>  -->
+      <!-- <div class="row mb40">
+        <div class="form-group col-md-1">
+          <label for="inputEmail4">State<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-2">
+            <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a State" optionLabel="name" [showClear]="true"></p-dropdown>
+         
+        </div>
+        <div class="form-group col-md-1">
+          <label for="inputEmail4" >District<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-2">
+          <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a District" optionLabel="name" [showClear]="true"></p-dropdown>
+        </div>
+        <div class="form-group col-md-1">
+            <label for="inputEmail4">C/S/U<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-2">
+              <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a C/S/U" optionLabel="name" [showClear]="true"></p-dropdown>
+           
+          </div>
+          <div class="form-group col-md-1">
+            <label for="inputEmail4" >Name<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-2">
+            <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Name" optionLabel="name" [showClear]="true"></p-dropdown>
+          </div>
+      </div>  -->
+<!-- <div class="row mb40">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Sno.</th>
+                <th scope="col">Name of the University</th>
+                <th scope="col">Mobile No</th>
+                <th scope="col">Email</th>
+                <th scope="col">Website</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+             
+            </tbody>
+          </table>
+        </div>  
+</div> -->
+<div class="row mb40">
+    <div class="form-group col-md-3">
+      <label for="inputEmail4">Specialization of Subjects to be taught<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-2">
+      <input type="text" class="inputArea" pInputText/>
+     
+    </div>
+    
+  </div> 
+  <div class="row mb40">
+    <div class="form-group col-md-3">
+      <label for="inputEmail4">Any further Information or Remarks<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-2">
+      <input type="text" class="inputArea" pInputText/>
+     
+    </div>
+    
+  </div> 
+  <div class="row mb40">
+    <div class="col-md-12">
+      <label>Attended Shastra Sabha & Shastric Awards</label>
+      <table class="table table-bordered" >
+        <thead>
+          <tr>
+            <th scope="col">Information </th>
+            <th scope="col">Name of Shastra Sabha</th>
+            <th scope="col">Year </th>
+             <th scope="col">Title of Shastra Presentation</th>
+             <th scope="col">Name of Organizers of Shastra Sabha</th>
+             <th scope="col">Upload Documents</th>
+             <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of rows; let i = index">
+                <td><input type="text" class="inputArea" pInputText name="serialNo{{i}}" [(ngModel)]="row.serialNo" /></td>
+                <td><input type="text" class="inputArea" pInputText name="nameOfExamination{{i}}" [(ngModel)]="row.nameOfExamination" /></td>
+                <td><input type="text" class="inputArea" pInputText name="nameOfUniversity{{i}}" [(ngModel)]="row.nameOfUniversity" /></td>
+                <td><input type="text" class="inputArea" pInputText name="subjectOfSpecialization{{i}}" [(ngModel)]="row.subjectOfSpecialization" /></td>
+                <td><input type="text" class="inputArea" pInputText name="subjectOfSpecialization{{i}}" [(ngModel)]="row.subjectOfSpecialization" /></td>
+                <td><input type="file"  /></td>
+    
+                <td>
+                <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+                <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+                <!-- <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i> -->
+                <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+                
+            </td>
+            </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row mb40">
+    <div class="col-md-12">
+      <label>Published Articles and Books</label>
+      <table class="table table-bordered" >
+        <thead>
+          <tr>
+            <th scope="col">Book/Article </th>
+            <th scope="col">Title </th>
+            <th scope="col">Publisher  </th>
+             <th scope="col">Year </th>
+             <th scope="col">Book isbn/issn number</th>
+             <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of rows; let i = index">
+                <td><input type="text" class="inputArea" pInputText name="serialNo{{i}}" [(ngModel)]="row.serialNo" /></td>
+                <td><input type="text" class="inputArea" pInputText name="nameOfExamination{{i}}" [(ngModel)]="row.nameOfExamination" /></td>
+                <td><input type="text" class="inputArea" pInputText name="nameOfUniversity{{i}}" [(ngModel)]="row.nameOfUniversity" /></td>
+                <td><input type="text" class="inputArea" pInputText name="subjectOfSpecialization{{i}}" [(ngModel)]="row.subjectOfSpecialization" /></td>
+                <td><input type="text" class="inputArea" pInputText name="subjectOfSpecialization{{i}}" [(ngModel)]="row.subjectOfSpecialization" /></td>
+                <td>
+                <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+                <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+                <!-- <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i> -->
+                <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+                
+            </td>
+            </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row mb40">
+    <div class="form-group col-md-5">
+      <label for="inputEmail4">Whether previously appointed under the scheme through State Govt or CSU?<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-2">
+        <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Yes</mat-radio-button>
+            <mat-radio-button value="2">No</mat-radio-button>
+          </mat-radio-group>
+    </div>
+  
+  </div> 
+  <div class="row mb40">
+    <div class="col-md-12">
+      <label>If yes, please provide details.</label>
+      <table class="table table-bordered" >
+        <thead>
+          <tr>
+            <th scope="col">Name of the Institution</th>
+            <th scope="col">Details  </th>
+            <th scope="col">From   </th>
+             <th scope="col">To </th>
+             <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of rows; let i = index">
+                <td><input type="text" class="inputArea" pInputText name="serialNo{{i}}" [(ngModel)]="row.serialNo" /></td>
+                <td><input type="text" class="inputArea" pInputText name="nameOfExamination{{i}}" [(ngModel)]="row.nameOfExamination" /></td>
+                <td><p-calendar placeholder="from" [style]="{'width':'100%', 'height':'40px'}" [inputStyle]="{'width':'88%', 'border':'1px solid #317ecb'}" [showIcon]="true"  class="formControl" icon="pi pi-calendar" dateFormat="dd/mm/yy"></p-calendar>
+                </td>
+                <td><p-calendar placeholder="to" [style]="{'width':'100%', 'height':'40px'}" [inputStyle]="{'width':'88%', 'border':'1px solid #317ecb'}" [showIcon]="true"  class="formControl" icon="pi pi-calendar" dateFormat="dd/mm/yy"></p-calendar>
+                </td>
+                <td>
+                <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+                <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+                <!-- <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i> -->
+                <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+                
+            </td>
+            </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+ 
+
+    </p-card>
+</div>      

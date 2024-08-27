@@ -1,0 +1,52 @@
+<p>dynamicform works!</p>
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+<div class="row col-md-12" >
+    <div class="col-md-4">
+        <mat-form-field class="d-block">
+            <mat-label>Name</mat-label>
+            <input matInput autocomplete="off" type="text" matTooltip="Name" formControlName="name"
+               required>
+                <mat-error class="err-msgs"
+                
+                *ngIf="errorHandling(myForm,'name','required')">
+                <span class="errorMessage">
+                  Please Enter name.</span>
+              </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="col-md-4">
+
+        <mat-form-field class="d-block">
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="selectCount">
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+                <mat-error class="err-msgs"
+                *ngIf="errorHandling(myForm,'selectCount','required')">
+                <span class="errorMessage">
+                  Please Enter mBNumber.</span>
+              </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="col-md-4">
+        <mat-form-field class="d-block">
+
+                <mat-label>Textarea</mat-label>
+                <textarea matInput formControlName="textArea"></textarea>
+                <mat-error class="err-msgs"
+                *ngIf="errorHandling(myForm,'textArea','required')">
+                <span class="errorMessage">
+                  Please Enter.</span>
+              </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="col-md-6">
+        <label>Float label radio button</label>
+        <mat-radio-group formControlName="floatLabelControl">
+          <mat-radio-button value="auto">Auto</mat-radio-button>
+          <mat-radio-button value="always">Always</mat-radio-button>
+        </mat-radio-group>
+    </div>
+</div>
+</form>

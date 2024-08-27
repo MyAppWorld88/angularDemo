@@ -1,0 +1,350 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Personal Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Previous Year Details</b>
+      </p-divider>
+    
+      <form [formGroup]="examScholarship" (ngSubmit)="submit()">
+        <div class="row mb40">
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Name of the last qualifying examination Passed<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input  type="text" class="inputArea" formControlName="nameOfLastQualifyExam" placeholder="Name of the last qualifying examination Passed" pInputText >
+          </div>
+       
+        </div> 
+        <div class="row mb40">
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Roll Number<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input  type="text" class="inputArea" formControlName="rollNumber" placeholder="Name of the last qualifying examination Passed" pInputText >
+          </div>
+        </div> 
+        <div class="row mb40">
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Year of Passing <span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+          <p-dropdown [options]="yearOfPassing" formControlName="passingYear" class="formControl" [style]="{'width':'100%', 'border':'1px solid #317ecb'}"  placeholder="Select a Year of Passing" optionLabel="year" ></p-dropdown>
+           
+          </div>
+        </div> 
+        <div class="row mb40">
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Percentage or Grade according to your Academic Session <span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+          <p-dropdown [options]="percentage" formControlName="percentageOrGrade"  (onChange)="percentageFnc($event)" class="formControl" [style]="{'width':'100%', 'border':'1px solid #317ecb'}"  placeholder="Select a Percentage or Grade" optionLabel="name" [showClear]="true"></p-dropdown>
+           
+          </div>
+        </div> 
+        <div class="row mb40" *ngIf="!isPercentage">
+          <p style="font-weight: 600; text-align: center;">Over All</p>
+          <div class="form-group col-md">
+            <label>Grade</label>
+            <input  type="text" class="inputArea" formControlName="oGrade" placeholder="Ex:- A+" pInputText >
+          </div>
+          <div class="form-group col-md">
+            <label>C.G.P.A/S.G.P.A</label>
+            <input  type="text" class="inputArea" formControlName="oCgpa" placeholder="Ex:-7.1" pInputText >
+          </div>
+          <div class="form-group col-md">
+            <label>Marks</label>
+            <input  type="text" class="inputArea" formControlName="oMarks" placeholder="Ex:-450" pInputText >
+          </div>
+          <div class="form-group col-md">
+            <label>Percentage</label>
+            <input  type="text" class="inputArea" formControlName="oPercentage" placeholder="Ex-: 88%" pInputText >
+          </div>
+          </div>
+          <div class="row mb40" *ngIf="!isPercentage">
+          <p style="font-weight: 600; text-align: center;">Sanskrit</p>
+          <div class="form-group col-md">
+            <label>Grade</label>
+            <input  type="text" class="inputArea" formControlName="sGrade"  placeholder="Ex:-B+" pInputText >
+          </div>
+          <div class="form-group col-md">
+            <label>C.G.P.A/S.G.P.A</label>
+            <input  type="text" class="inputArea" formControlName="sCGPA"  placeholder="Ex:-8.8" pInputText >
+          </div>
+          <div class="form-group col-md">
+            <label>Marks</label>
+            <input  type="text" class="inputArea" formControlName="sMarks"  placeholder="Ex:- 440" pInputText >
+          </div>
+          <div class="form-group col-md">
+            <label>Percentage</label>
+            <input  type="text" class="inputArea" formControlName="sPercentage"  placeholder="Ex:- 90%" pInputText >
+          </div>
+        </div>
+        <div class="row mb40" *ngIf="isPercentage">
+          <div class="form-group col-md-4">
+          </div>
+          <div class="form-group col-md-3">
+            <label>Percentage in Sanskrit/Pali/Prakrit(%)</label>
+            <input  type="text" class="inputArea" formControlName="percentageInSanskriti" placeholder="Ex:- 78%" pInputText >
+          </div>
+          <div class="form-group col-md-3">
+            <label>Overall Percentage(%)</label>
+            <input  type="text" class="inputArea" formControlName="overAllPercentageInSans" placeholder="Ex:- 88%" pInputText >
+          </div>
+          
+        </div>
+        <div class="row mb40">
+        <div class="form-group col-md-2">
+          <label for="inputEmail4">Certificate<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <div class="file-upload">
+            <input type="file" id="upload1" class="file-input" (change)="onUpload($event,'1')" formControlName="uploadCertification" accept="image/*" />
+          <!-- <label for="upload1" class="file-label">
+            <span class="icon">+</span> Upload Certificate
+          </label><br> -->
+          <!-- <img [src]="preview" class="preview"> -->
+          <small *ngFor="let file of uploadedFiles">{{file.name}}<br></small>
+          <!-- <small class="p-error block" *ngIf="errorHandling('uploadCertification','required') && isSubmitted">
+            Certificate is required</small> -->
+          </div>
+      <!-- Upload Percent: {{percentDone}}% <br /> -->
+      
+      <!-- <ng-container *ngIf="uploadSuccess">
+        Upload Successful
+      </ng-container>  -->
+        </div>
+        </div>
+        <p-divider align="center" type="solid">
+          <b  class="fnt20">Particulars of the Present Class in Current Year</b>
+          </p-divider>
+        <div class="row mb40">
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Student's Identity Card Number issued by the School/College/University</label>
+          </div>
+          <div class="form-group col-md-3">
+            <input  type="text" class="inputArea" formControlName="studIdCard" placeholder="Identity Card Number" pInputText >
+          </div>
+        </div>    
+        <div class="row mb40">
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Wheather Sanskrit/Pali/Prakrit has been offered as a major/minor/optional subject in present year<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <p-dropdown [options]="degree" formControlName="optionalSubject" class="formControl" [style]="{'width':'100%', 'border':'1px solid #317ecb'}"  placeholder="Select a present year" optionLabel="name" [showClear]="true"></p-dropdown>
+          </div>
+        
+        </div> 
+        <div class="row mb40">
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Stream (Modern or Traditional)<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+              <p-dropdown [options]="streams" formControlName="stream" class="formControl" [style]="{'width':'100%', 'border':'1px solid #317ecb'}"  placeholder="Select a Stream" optionLabel="name" [showClear]="true"></p-dropdown>
+       </div>
+       </div>
+       <div class="row mb40">
+       <div class="form-group col-md-4">
+        <label for="inputEmail4">Present Class<span class="asterisk">*</span></label>
+      </div>
+      <div class="form-group col-md-3">
+          <p-dropdown [options]="degree" formControlName="presentClass" (onChange)="selectClass($event)" class="formControl" [style]="{'width':'100%', 'border':'1px solid #317ecb'}"  placeholder="Select a Present Class" optionLabel="name" [showClear]="true"></p-dropdown>
+   </div>
+      </div>
+      <div class="row mb40">
+        <div class="form-group col-md-4">
+          <label for="inputEmail4">Present Class Year<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-dropdown [options]="presentClassYear" formControlName="presentClassYear" class="formControl" [style]="{'width':'100%', 'border':'1px solid #317ecb'}"  placeholder="Select a Present Class Year" optionLabel="year" [showClear]="true"></p-dropdown>
+        </div>
+      </div>
+     
+      <p-divider align="center" type="solid">
+        <b  class="fnt20">Subject of the Present Class</b>
+      </p-divider>
+      <p *ngIf="presentClassPHD" style="font-size: 25px; text-align: center; color: red;">Not Applicable</p>
+      <ng-container *ngIf="!presentClassPHD">
+      <div class="row mb40"formArrayName="subjectOfPresentClass">
+        <div class="form-group col-md-12" style="display: flex;">
+          <button type="button" class="btn btn-primary" matTooltip="Add" (click)="addSubjectToPresentClass()">Add New Subject</button>
+          <!-- <mat-icon class="blue-icon" matTooltip="Add" (click)="addSubjectToPresentClass()"
+              >add_circle</mat-icon> -->
+          <!-- <mat-icon class="delete_icon" matTooltip="Delete">delete_forever</mat-icon> -->
+          <button type="button" *ngIf="subjectOfPresentClass.controls.length>3" class="btn btn-danger" matTooltip="Delete" (click)="deleteSubject()">Delete Subject</button>
+        </div>
+        <div class="form-group col-md-3"  *ngFor="let item of subjectOfPresentClass.controls; let i = index">
+          <label>({{returnAlphabet(i+65)}})</label>
+          <input  type="text" class="inputArea"  formControlName="{{i}}" placeholder="" pInputText >
+        </div>
+
+        <!-- <div class="form-group col">
+          <label>(B)</label>
+          <input  type="text" class="inputArea" placeholder="" pInputText >
+        </div>
+        <div class="form-group col">
+          <label>(C)</label>
+          <input  type="text" class="inputArea" placeholder="" pInputText >
+        </div> -->
+        <!-- <div class="form-group col">
+          <label>(D)</label>
+          <input  type="text" class="inputArea" placeholder="" pInputText >
+        </div>
+        <div class="form-group col">
+          <label>(E)</label>
+          <input  type="text" class="inputArea" placeholder="" pInputText >
+        </div>
+        <div class="form-group col">
+          <label>(F)</label>
+          <input  type="text" class="inputArea" placeholder="" pInputText >
+        </div>
+      </div>
+      <div class="row mb40">
+        <div class="form-group col">
+          <label>(G)</label>
+          <input  type="text" class="inputArea" placeholder="" pInputText >
+        </div>
+        <div class="form-group col">
+          <label>(H)</label>
+          <input  type="text" class="inputArea" placeholder="" pInputText >
+        </div>
+        <div class="form-group col">
+          <label>(I)</label>
+          <input  type="text" class="inputArea" placeholder="" pInputText >
+        </div>
+        <div class="form-group col">
+          <label>(J)</label>
+          <input  type="text" class="inputArea" placeholder="" pInputText >
+        </div> -->
+      </div>
+      </ng-container>
+      <ng-container *ngIf="presentClassPHD">
+      <p-divider align="center" type="solid">
+        <b  class="fnt20">For Research Ph.D Students</b>
+      </p-divider>  
+      <div class="row mb40">
+        <div class="form-group col-md-5">
+          <label for="inputEmail4">Whather Student has been registered for Ph.D/Vidyavaridhi course<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-5">
+          <mat-radio-group aria-label="Select an option" formControlName="registredInPhd">
+            <mat-radio-button value="1">Yes</mat-radio-button>
+            <mat-radio-button value="2">No</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div> 
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">If Yes, Enter Registration No.<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" formControlName="registrationNo" placeholder="Enter Registration No" pInputText >
+        </div>
+         
+     
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">If Yes Date of Registration<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-calendar placeholder="Date of Registration" formControlName="dateOfReg" [style]="{'width':'100%', 'height':'40px'}" [inputStyle]="{'width':'88%', 'border':'1px solid #317ecb'}" [showIcon]="true"  class="formControl" icon="pi pi-calendar" dateFormat="dd/mm/yy"></p-calendar>
+        </div>
+     
+      
+      </div>
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Progress Report by the Supervisor of 2nd and 3rd Year Student        <span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <!-- <input type="file"  (change)="upload($event)" /> -->
+          <!-- Upload Percent: {{percentDone}}% <br /> -->
+          
+          <!-- <ng-container *ngIf="uploadSuccess">
+            Upload Successful
+          </ng-container>  -->
+          <div class="file-upload">
+            <input type="file" id="upload2" class="file-input" (change)="onUpload($event,'2')" formControlName="progressReportUpload" accept="image/*" multiple />
+          <label for="upload2" class="file-label">
+            <span class="icon">+</span> Upload Progress Report
+          </label><br>
+          <small *ngFor="let file of uploadedProgressReport">{{file.name}}<br></small>
+          <!-- <small class="p-error block" *ngIf="errorHandling('uploadCertification','required') && isSubmitted">
+            Certificate is required</small> -->
+          
+          </div>
+          
+        </div>
+         
+     
+     
+      
+      </div>
+      <p-divider align="center" type="solid">
+        <b  class="fnt20">Scholarship from any other source for doing Ph.D Students</b>
+      </p-divider>  
+      <div class="row mb40">
+        <div class="form-group col-md-5">
+          <label for="inputEmail4">Are You Availing Scholarship from other source<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <mat-radio-group aria-label="Select an option" formControlName="availingScholarship">
+            <mat-radio-button value="1">Yes</mat-radio-button>
+            <mat-radio-button value="2">No</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div> 
+      <div class="row mb40">
+        <div class="form-group col-md-5">
+          <label for="inputEmail4">How much Scholarship amount obtained per year<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" formControlName="scholarshipAmount" placeholder="Scholarship amount" pInputText >
+        </div>
+         
+      </div> 
+      <div class="row mb40">
+        <div class="form-group col-md-5">
+          <label for="inputEmail4">From which source (Institution/Organisation) Scholarship Obtained<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" formControlName="scholarshipSource"  placeholder="Scholarship Obtained" pInputText >
+        </div>
+      </div>
+      <div class="row mb40">
+        <div class="form-group col-md-5">
+          <label for="inputEmail4">Scholarship Obtained from<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-calendar placeholder="scholarship Obtained from" formControlName="scholarshipFrom" [style]="{'width':'100%', 'height': '40px'}" [inputStyle]="{'width':'88%', 'border':'1px solid #317ecb'}" [showIcon]="true"  class="formControl" icon="pi pi-calendar" dateFormat="dd/mm/yy"></p-calendar>
+        </div>
+        </div>
+        <div class="row mb40">
+        <div class="form-group col-md-5">
+          <label for="inputEmail4">Scholarship Obtained to<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-calendar placeholder="scholarship Obtained to" formControlName="scholarshipTo" [style]="{'width':'100%', 'height': '40px'}" [inputStyle]="{'width':'88%', 'border':'1px solid #317ecb'}" [showIcon]="true"  class="formControl" icon="pi pi-calendar" dateFormat="dd/mm/yy"></p-calendar>
+        </div>
+        </div>
+
+        <div class="row mb40">
+          <div class="form-group col-md-5">
+            <label for="inputEmail4">How many Years/Months this scholarship obtained during the Ph.D/Vidyavaridhi<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input  type="text" class="inputArea" formControlName="obtainedYearsOrMonths" placeholder="Years/Months this scholarship obtained" pInputText >
+          </div>
+        </div> 
+        
+ 
+  </ng-container>
+  <div class="col-md-12 text-center center-buttons">
+    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+    <button type="button" class="btn btn-secondary btn-sm">Reset</button>
+  </div>
+
+      </form>
+
+    </p-card>
+  </div>

@@ -1,0 +1,231 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Personal Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Details of Journal</b>
+      </p-divider>
+      <form>
+      
+     
+        <div class="row mb40">
+            <div class="col-md-12">
+                <p>Details of Periodical</p>
+              <form>
+
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name of the Periodical</th>
+                        <th scope="col">Date of Commencement</th>
+                        <th scope="col">International Standard Serial Number</th>
+                        <th scope="col">Periodicity of the Publication</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of rows; let i = index">
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                       
+                        <!-- Add more fields as needed -->
+                        <td>
+                            <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+                            <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+                            <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+                            
+                        </td>
+                        </tr>
+                     
+                    </tbody>
+                  </table>
+                  <!-- <button (click)="addRow()">Add Row</button> -->
+                  </form>
+                </div>  
+        </div>
+        <p-divider align="center" type="solid">
+        </p-divider>
+        <div class="row mb40">
+            <div class="col-md-12">
+                <p>Chief Editor and Publisher</p>
+              <form>
+
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name of Chief Editor </th>
+                        <th scope="col">Academic Qualification of Chief Editor</th>
+                        <th scope="col">Name of the Publisher</th>
+                        <th scope="col">Address of Publisher</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of rows; let i = index">
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                       
+                        <!-- Add more fields as needed -->
+                        <td>
+                            <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+                            <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+                            <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+                            
+                        </td>
+                        </tr>
+                     
+                    </tbody>
+                  </table>
+                  <!-- <button (click)="addRow()">Add Row</button> -->
+                  </form>
+                </div>  
+        </div>
+        <p-divider align="center" type="solid">
+        </p-divider>
+        <div class="row mb40">
+            <div class="col-md-12">
+                <p>Sanskrit Language related details</p>
+              <form>
+
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Average cost of printing of one issue</th>
+                        <th scope="col">What is the language of the Journal/Publication?</th>
+                        <th scope="col">If journal is published 100% in Sanskrit or any other language ?</th>
+                        <th scope="col">If using other languages the what is the %</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of rows; let i = index">
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                       
+                        <!-- Add more fields as needed -->
+                        <td>
+                            <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+                            <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+                            <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+                            
+                        </td>
+                        </tr>
+                     
+                    </tbody>
+                  </table>
+                  <!-- <button (click)="addRow()">Add Row</button> -->
+                  </form>
+                </div>  
+        </div>
+        <p-divider align="center" type="solid">
+        </p-divider>
+        <div class="row mb40">
+            <div class="col-md-12">
+                <p>Number of Copies Subscribed for following</p>
+              <form>
+
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Libraries and Institutions</th>
+                        <th scope="col">Individuals</th>
+                        <th scope="col">Agents</th>
+                        <th scope="col">Free Distribution</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of rows; let i = index">
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                       
+                        <!-- Add more fields as needed -->
+                        <td>
+                            <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+                            <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+                            <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+                            
+                        </td>
+                        </tr>
+                     
+                    </tbody>
+                  </table>
+                  <!-- <button (click)="addRow()">Add Row</button> -->
+                  </form>
+                </div>  
+        </div>
+
+        <div class="row mb40">
+            <div class="form-group col-md-5">
+              <label for="inputEmail4">What improvement in the content & the quality of the journal are proposed to be made during the current year & the cost there of (full details to be furnished with the break-up of expenditure involved )<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <input type="text" class="inputArea" placeholder="full details to be furnished" pInputText >
+
+          </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-5">
+              <label for="inputEmail4">Amount of grant received last year from the Govt. Of India/University & what improvements were effected in the journal with their helps<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <input type="text" class="inputArea" placeholder="Govt. Of India/University" pInputText >
+
+          </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-5">
+              <label for="inputEmail4">Amount of Grants Requested for this Year<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <input type="text" class="inputArea" placeholder="Amount of Grants Requested for this Year" pInputText >
+
+          </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-5">
+              <label for="inputEmail4">Copy of Latest Issue of Journal<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <input type="file"  (change)="upload($event)" />
+                <!-- Upload Percent: {{percentDone}}% <br /> -->
+                
+                <!-- <ng-container *ngIf="uploadSuccess">
+                  Upload Successful
+                </ng-container>  -->
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-5">
+              <label for="inputEmail4">Number of proof of each issue earmarked for Advertisements<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="Number of proof of each issue earmarked for Advertisements" pInputText >
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-5">
+              <label for="inputEmail4">How many new Journals have been published in the last year<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="How many new Journals have been published in the last year" pInputText >
+            </div>
+          </div>
+        
+        
+       <div class="btn">
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+        <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+      </div>
+      </form>
+    </p-card>
+  </div>

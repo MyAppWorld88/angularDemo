@@ -1,0 +1,17 @@
+<p style="font-size: large;font-weight: 700;">Split Form</p>
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+    <div class="col-md-12 overflow-hidden">
+        <!-- personal-info -->
+        <app-personal-info></app-personal-info>
+
+        <!-- address -->
+        <app-address></app-address>
+
+
+    </div>
+    <div class="text-center mb-2 mt-2">
+        <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
+    </div>
+</form>
+{{myForm.value|json}}
+

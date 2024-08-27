@@ -1,0 +1,48 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Personal Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Engaged/Additional required teacher details (For renewal cases only) </b>
+      </p-divider>
+      <form>
+        <div class="row mb40">
+            <div class="col-md-12">
+              <p class="label">Details of engaged teachers and requirement of additional teachers under Central Schemes</p>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Teacher Type</th>
+                    <th scope="col">Name of the teacher</th>
+                    <th scope="col">Father/Spouse Name</th>
+                    <th scope="col">Type of Teacher (Sanskrit/Modern)</th>
+                    <th scope="col">Residential address </th>
+                    <th scope="col">Mobile number</th>
+                    <th scope="col">Photo of the teacher </th>
+                    <th scope="col">ID proof approved by Govt. of India (upload)</th>
+                    <th scope="col">Higher qualification certificate (upload)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+
+              <td><p-dropdown [options]="testArr" class="formControl" [style]="{'width':'80%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Courses Offered" optionLabel="name" [showClear]="true"></p-dropdown></td>
+                    <td> <input  type="text" class="inputArea" placeholder="" pInputText ></td>
+                    <td> <input  type="text" class="inputArea" placeholder="" pInputText ></td>
+                    <td> <input  type="text" class="inputArea" placeholder="" pInputText ></td>
+                    <td> <input  type="text" class="inputArea" placeholder="" pInputText ></td>
+                    <th scope="row"> <input  type="text" class="inputArea" placeholder="" pInputText ></th>
+                    <td> <input  type="text" class="inputArea" placeholder="" pInputText ></td>
+                    <td><input type="file"  (change)="upload($event)" /></td>
+                    <td><input type="file"  (change)="upload($event)" /></td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+            </div>
+            </div>
+        </form>
+        </p-card>
+        </div>
+        

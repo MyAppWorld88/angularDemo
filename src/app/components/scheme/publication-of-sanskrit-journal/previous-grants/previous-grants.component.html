@@ -1,0 +1,135 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Personal Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Details of Previous Grant Received</b>
+      </p-divider>
+      <form>
+      
+       
+        <div class="row mb40">
+            <div class="col-md-12">
+                <p>Detail of Previous Application</p>
+              <form>
+
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Have you applied before for same Title/Edition/Book? </th>
+                        <th scope="col">If Yes, when?</th>
+                        <th scope="col">Please mention details of Letter and Decision taken by Ministry/University.</th>
+                        <th scope="col">How many copies left to be sold?</th>
+                        <th scope="col">Any additional information?</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of rows; let i = index">
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                       
+                        <!-- Add more fields as needed -->
+                        <td>
+                            <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+                            <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+                            <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+                            
+                        </td>
+                        </tr>
+                     
+                    </tbody>
+                  </table>
+                  <!-- <button (click)="addRow()">Add Row</button> -->
+                  </form>
+                </div>  
+        </div>
+      
+
+          <p-divider align="center" type="solid">
+        </p-divider>
+          <div class="row mb40">
+            <div class="col-md-12">
+                <p>Sources from which Financial Assistance have been received including grants from State Govt. Local Bodies/Trusts/ Govt. of India/Central Sanskrit University etc., for the last three years. (Incase eligible them please enclose the details).</p>
+              <form>
+
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Year </th>
+                        <th scope="col">Source </th>
+                        <th scope="col">Amount </th>
+                        <th scope="col"> Purpose of the grant</th>
+                        <th scope="col"> Date </th>
+                        <th scope="col"> Progress made in this direction </th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of rows; let i = index">
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        
+                        <!-- Add more fields as needed -->
+                        <td>
+                            <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+                            <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+                            <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+                            
+                        </td>
+                        </tr>
+                     
+                    </tbody>
+                  </table>
+                  <!-- <button (click)="addRow()">Add Row</button> -->
+                  </form>
+                </div>  
+        </div>  
+        <p-divider align="center" type="solid">
+        </p-divider>
+        <div class="row mb40">
+            <div class="form-group col-md-5">
+              <label for="inputEmail4">Please upload the Utilization Certificate for last five years, duly certified by the Auditor in respect of previous grant received form Central/State Govt. or CSU, Delhi or any other source. <span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <input type="file"  (change)="upload($event)" />
+                <!-- Upload Percent: {{percentDone}}% <br /> -->
+                
+                <!-- <ng-container *ngIf="uploadSuccess">
+                  Upload Successful
+                </ng-container>  -->
+          </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-5">
+              <label for="inputEmail4">In case of receipt of Grants from CSU in previous years, Whether mentioned the details in any published journal that "This Journal has been published with the Financial Assistance of Govt. of India/CSU". If yes please upload the proof the document <span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <input type="file"  (change)="upload($event)" />
+                <!-- Upload Percent: {{percentDone}}% <br /> -->
+                
+                <!-- <ng-container *ngIf="uploadSuccess">
+                  Upload Successful
+                </ng-container>  -->
+          </div>
+          </div>
+       
+
+      
+      
+      
+       <div class="btn">
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+        <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+      </div>
+      </form>
+    </p-card>
+  </div>

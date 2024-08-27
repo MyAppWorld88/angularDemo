@@ -1,0 +1,136 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+        <p-divider align="center" type="solid">
+        <b  class="fnt20">Details of the Institution</b>
+    </p-divider>
+    <form>
+        <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Name of the Institution<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="Name of the Institution" pInputText >
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Institution Type<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Institution Type" optionLabel="name" [showClear]="true"></p-dropdown>
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Nature of the Institution<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <input type="text" class="inputArea" placeholder="Registration Number of the Institution" pInputText >
+
+            </div>
+          </div> 
+    
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Mobile Number<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" placeholder="Institutional Mobile Number" pInputText >
+        </div>
+      </div>
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Email<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" placeholder="Institutional Mobile Number" pInputText >
+        </div>
+      </div>
+   
+
+
+     
+      <p-divider align="center" type="solid">
+        <b class="fnt20">Address</b>
+        </p-divider>
+        <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">Country<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+              <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Country" optionLabel="name" [showClear]="true"></p-dropdown>
+          </div>
+        </div>
+        <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">State<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a State" optionLabel="name" [showClear]="true"></p-dropdown>
+            </div>
+              <div class="form-group col-md-2">
+              <label for="inputEmail4" >District<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a District" optionLabel="name" [showClear]="true"></p-dropdown>
+            </div>
+          </div>
+        
+       
+        <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Sub District<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Sub District" optionLabel="name" [showClear]="true"></p-dropdown>
+        </div>
+     
+        <div class="form-group col-md-2">
+          <label for="inputEmail4" >Block</label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Block" optionLabel="name" [showClear]="true"></p-dropdown>
+        </div>
+      </div> 
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Pincode<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" placeholder="Pincode" pInputText >
+        </div>
+      </div> 
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Full Address<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <textarea pInputTextarea></textarea>
+        </div>
+      </div>
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Email<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" placeholder="Email" pInputText >
+        </div>
+      </div>
+   
+      <!-- <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Institutional Phone Number<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" placeholder="" pInputText >
+        </div>
+      </div> -->
+      
+    
+     <div class="btn">
+      <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+      <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+      </div>
+    </form>
+    </p-card>
+  </div>

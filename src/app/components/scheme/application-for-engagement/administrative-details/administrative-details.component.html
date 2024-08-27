@@ -1,0 +1,175 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Personal Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Administrative Details of Institution</b>
+      </p-divider>
+      <form>
+        <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">Details of Courses/Subjects offered to students. <span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input type="file"  (change)="upload($event)" />
+            <!-- Upload Percent: {{percentDone}}% <br /> -->
+            
+            <!-- <ng-container *ngIf="uploadSuccess">
+              Upload Successful
+            </ng-container>  -->
+        </div>
+        </div>
+        <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Courses Offered<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Courses Offered" optionLabel="name" [showClear]="true"></p-dropdown>
+
+          </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Total how many students enrolled in previous academic year<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input  type="text" class="inputArea" placeholder="enrolled in previous academic year" pInputText >
+            </div>
+          </div> 
+     
+          <!-- <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Copy of Society / Trust / Govt. Notification order<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="file"  (change)="upload($event)" /> -->
+              <!-- Upload Percent: {{percentDone}}% <br /> -->
+              
+              <!-- <ng-container *ngIf="uploadSuccess">
+                Upload Successful
+              </ng-container>  -->
+          <!-- </div> -->
+          
+            <!-- <div class="form-group col-md-3">
+              <label for="inputEmail4">Number of students in each class during the last academic year<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="file"  (change)="upload($event)" />
+              Upload Percent: {{percentDone}}% <br /> -->
+              
+              <!-- <ng-container *ngIf="uploadSuccess">
+                Upload Successful
+              </ng-container>
+          </div>
+          </div> -->
+           
+
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Darpan Portal Registration Certificate for NGO's/Voluntary organizations<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="file"  (change)="upload($event)" />
+              <!-- Upload Percent: {{percentDone}}% <br /> -->
+              
+              <!-- <ng-container *ngIf="uploadSuccess">
+                Upload Successful
+              </ng-container>  -->
+          </div>
+          </div>
+
+          <!-- <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Total how many students enrolled in current academic year<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <input  type="text" class="inputArea" placeholder="enrolled in current academic year" pInputText >
+          </div>
+          </div> -->
+
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Whether Computer Facility is available?<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2">No</mat-radio-button>
+                  </mat-radio-group>
+          </div>
+          </div>
+          <div class="row mb40">
+         
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Number of students in each class during the current academic year <span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="file"  (change)="upload($event)" />
+              <!-- Upload Percent: {{percentDone}}% <br /> -->
+              
+              <!-- <ng-container *ngIf="uploadSuccess">
+                Upload Successful
+              </ng-container>  -->
+          </div>
+          </div>
+
+         
+
+         
+
+          <!-- <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">How many students learn Sanskrit in the current academic year<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <input  type="text" class="inputArea" placeholder="Sanskrit in the current academic year" pInputText >
+          </div>
+          </div> -->
+
+          <!-- <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Examining Body/Board to which the institution is affiliated.<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <input  type="text" class="inputArea" placeholder="institution is affiliated" pInputText >
+            
+          </div>
+          </div> -->
+
+          <!-- <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">How many students learned Sanskrit in the previous academic year<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <input  type="text" class="inputArea" placeholder="Sanskrit in the previous academic year" pInputText >
+
+          </div>
+          </div> -->
+
+
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Upload the affiliation Certificate of the Institution<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="file"  (change)="upload($event)" />
+              <!-- Upload Percent: {{percentDone}}% <br /> -->
+              
+              <!-- <ng-container *ngIf="uploadSuccess">
+                Upload Successful
+              </ng-container>  -->
+          </div>
+          </div>
+
+
+
+       
+      
+       <div class="btn">
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+        <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+      </div>
+      </form>
+    </p-card>
+  </div>

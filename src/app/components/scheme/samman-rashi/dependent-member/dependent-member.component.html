@@ -1,0 +1,46 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+<p><b>Note :-</b></p>
+      <p-divider align="center" type="solid">
+      <b  class="fnt20">Share Details of all Dependent/Spouse members of your family</b>
+      </p-divider>
+<div class="row mb40">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Sno.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Relation</th>
+                <th scope="col">Occupation</th>
+                <th scope="col">Annual Income</th>
+                <th scope="col">Marital Status</th>
+                <th scope="col">Upload Photo</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let row of rows; let i = index">
+                <th scope="row"><input type="text" class="inputArea" pInputText /></th>
+                <td><input type="text" class="inputArea" pInputText /></td>
+                <td><input type="text" class="inputArea" pInputText /></td>
+                <td><input type="text" class="inputArea" pInputText /></td>
+                <td><input type="text" class="inputArea" pInputText /></td>
+                <td><input type="text" class="inputArea" pInputText /></td>
+                <td><input type="text" class="inputArea" pInputText /></td>
+                <td><input type="file" class="inputArea" pInputText /></td>
+                <td>
+                  <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+                  <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+                  <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+                  
+              </td>
+                </tr>
+             
+            </tbody>
+          </table>
+        </div>  
+</div>
+</p-card>
+</div>

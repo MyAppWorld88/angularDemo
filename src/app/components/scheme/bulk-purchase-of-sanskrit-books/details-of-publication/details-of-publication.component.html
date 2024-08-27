@@ -1,0 +1,101 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Personal Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Details of Publication Submitted for Bulkpurchase</b>
+      </p-divider>
+      <form>
+            <div class="row mb40">
+            <div class="col-md-12">
+                <p>Details of the Book </p>
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Title </th>
+                        <th scope="col">Subject </th>
+                        <th scope="col">Author/Editor</th>
+                        <th scope="col">ISBN </th>
+                        <th scope="col">No. of Volumes Published</th>
+                        <th scope="col">Price per Copy/Volume in rupees</th>
+                        <th scope="col">Brief description about the contents/deliverables of the Book(s) *</th>
+                        <th scope="col">Number of Copies Published with Year of Publication (of the present Edition.)</th>
+                        <th scope="col">Whether book is completely in Sanskrit or any other language. In case of Sanskrit along with other language then mention the percentage of all languages in the book</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                     
+                    </tbody>
+                  </table>
+                </div>  
+        </div>
+
+
+        <p-divider align="center" type="solid">
+            </p-divider>
+            <div class="row mb40">
+                <div class="form-group col-md-5">
+                  <label for="inputEmail4">Upload some pdf pages of each book (Title page, Index page, preface and the matter pages )<span class="asterisk">*</span></label>
+                </div>
+                <div class="form-group col-md-3">
+                  <input type="file"  (change)="upload($event)" />
+                  <!-- Upload Percent: {{percentDone}}% <br /> -->
+                  
+                  <!-- <ng-container *ngIf="uploadSuccess">
+                    Upload Successful
+                  </ng-container>  -->
+              </div>
+              </div>
+              
+        <div class="row mb40">
+            <div class="form-group col-md-5">
+              <label for="inputEmail4">Amount in rupees of Grants Requested for this Year<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="Grants Requested for this Year" pInputText >
+            </div>
+          </div>
+           <div class="row mb40">
+            <div class="form-group col-md-5">
+              <label for="inputEmail4">Whether two complementary copies of the proposed Books have been submitted to the University for evaluation?<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="University for evaluation" pInputText >
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-5">
+              <label for="inputEmail4">Do you have copyright of proposed books?<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2">No</mat-radio-button>
+                  </mat-radio-group>
+          </div>
+          </div>
+
+
+
+       
+      
+       <div class="btn">
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+        <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+      </div>
+      </form>
+    </p-card>
+  </div>

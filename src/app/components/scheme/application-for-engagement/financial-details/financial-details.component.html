@@ -1,0 +1,82 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Personal Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Financial Details</b>
+      </p-divider>
+      <form>
+        <div class="row mb40">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Audit Report for last three financial years<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input type="file"  (change)="upload($event)" />
+            <!-- Upload Percent: {{percentDone}}% <br /> -->
+            
+            <!-- <ng-container *ngIf="uploadSuccess">
+              Upload Successful
+            </ng-container>  -->
+        </div>
+        </div>
+        <div class="row mb40">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Balance Sheet for last three financial years duly certified by the auditor<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="file"  (change)="upload($event)" />
+              <!-- Upload Percent: {{percentDone}}% <br /> -->
+              
+              <!-- <ng-container *ngIf="uploadSuccess">
+                Upload Successful
+              </ng-container>  -->
+          </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Income & Expenditure for last three financial years duly certified by the auditor<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="file"  (change)="upload($event)" />
+              <!-- Upload Percent: {{percentDone}}% <br /> -->
+              
+              <!-- <ng-container *ngIf="uploadSuccess">
+                Upload Successful
+              </ng-container>  -->
+          </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Receipt & Payment for last three financial years duly certified by the auditor<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="file"  (change)="upload($event)" />
+              <!-- Upload Percent: {{percentDone}}% <br /> -->
+              
+              <!-- <ng-container *ngIf="uploadSuccess">
+                Upload Successful
+              </ng-container>  -->
+          </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Annual Report for last three financial years<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="file"  (change)="upload($event)" />
+              <!-- Upload Percent: {{percentDone}}% <br /> -->
+              
+              <!-- <ng-container *ngIf="uploadSuccess">
+                Upload Successful
+              </ng-container>  -->
+          </div>
+          </div>
+           
+       <div class="btn">
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+        <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+      </div>
+        </form>
+        </p-card>
+        </div>

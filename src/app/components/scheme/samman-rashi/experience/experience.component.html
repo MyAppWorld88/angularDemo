@@ -1,0 +1,43 @@
+
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+  <!-- <p-divider align="center" type="solid">
+      <b  class="fnt20">Details of Proposed Vocational Training</b>
+      </p-divider> -->
+      <form>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Serial No</th>
+        <th scope="col">Name of Institution</th>
+        <th scope="col">Classes Taught</th>
+        <th scope="col">Duration </th>
+        <th scope="col">Examination Year</th>
+        <th scope="col">Upload Related Documents</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of rows; let i = index">
+        <td><input type="text" class="inputArea" pInputText /></td>
+        <td><input type="text" class="inputArea" pInputText /></td>
+        <td><input type="text" class="inputArea" pInputText /></td>
+        <td><input type="text" class="inputArea" pInputText /></td>
+        <td><input type="text" class="inputArea" pInputText /></td>
+        <td><input type="file" class="inputArea" pInputText /></td>
+        
+        <td>
+            <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+            <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+            <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+            
+        </td>
+        </tr>
+     
+    </tbody>
+  </table>
+  </form>
+  </p-card>
+  </div>
+  
+

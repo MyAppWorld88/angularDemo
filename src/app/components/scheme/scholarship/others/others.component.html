@@ -1,0 +1,127 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+  <form [formGroup]="otherDetailForm" (ngSubmit)="submit()">
+  <p-card>
+    <!-- <div class="header">
+          <h3 style="text-align: center;">Bank Details</h3>
+      </div>   -->
+    <p-divider align="center" type="solid">
+      <b class="fnt20">Others Details</b>
+    </p-divider>
+    <div class="row col-md-12">
+      <div class="col-md-3">
+        <div class="file-upload mr-1">
+          <input type="file" id="photo"  class="file-input" (change)="onUpload($event,1)" formControlName="uploadPhoto" accept="image/*" multiple />
+        <label for="photo" class="file-label">
+          <span class="icon">+</span> Upload Photo
+        </label><br>
+    
+        <small *ngFor="let file of uploadedPhotoFile">{{file.name}}<br></small>
+        <small class="p-error block" *ngIf="errorHandling('uploadPhoto','required') && isSubmitted">
+          Upload Photo is required</small>
+        </div>
+      </div>
+      <div class="col-md-3">
+         <img [src]="previewPhoto" class="preview">
+      </div>
+      <div class="col-md-2">
+        <div class="file-upload ml-1">
+          <input type="file" id="signature" class="file-input" (change)="onUpload($event,2)" formControlName="uploadSignature" accept="image/*" multiple />
+        <label for="signature" class="file-label">
+          <span class="icon">+</span> Upload Signature
+        </label><br>
+   
+        <small *ngFor="let file of uploadedSignatureFile">{{file.name}}<br></small>
+        <small class="p-error block" *ngIf="errorHandling('uploadSignature','required') && isSubmitted">
+          Upload Signature is required</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <img [src]="previewSignature" class="preview">
+      </div>
+    </div>
+    <!-- <div class="signPhoto" style="display: flex; justify-content: center; margin-top: 50px; margin-bottom: 80px;">
+
+
+
+   
+      <p-fileUpload 
+            mode="basic" 
+            chooseLabel="Choose" 
+            chooseIcon="pi pi-upload"
+            name="demo[]" 
+            url="https://www.primefaces.org/cdn/api/upload.php" 
+            accept="image/*" 
+            maxFileSize="1000000"/><br>
+            <span class="caption">Upload Passpord Size Photo</span>
+            <p-toast />
+            <p-fileUpload 
+                mode="basic" 
+                chooseLabel="Choose" 
+                chooseIcon="pi pi-upload"
+                name="demo[]" 
+                url="https://www.primefaces.org/cdn/api/upload.php" 
+                accept="image/*" 
+                maxFileSize="1000000"/><br>
+                <span class="caption">Upload Signature Photo</span>
+    </div> -->
+    <p-divider align="center" type="solid">
+      <!-- <b  class="fnt20">Others Details</b> -->
+    </p-divider>
+
+  
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Occupation<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+        <input type="text" class="inputArea" formControlName="occupation" placeholder="Occupation" pInputText>
+              <small class="p-error block" *ngIf="errorHandling('occupation','required') && isSubmitted">
+                occupation is required</small>
+        </div>
+      </div>
+
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Annual Income<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input type="text" class="inputArea" formControlName="annualIncome" placeholder=" Annual income of entire family" pInputText>
+          <small class="p-error block" *ngIf="errorHandling('annualIncome','required') && isSubmitted">
+            Annual Income is required</small>
+        </div>
+      </div>
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Category Certificate<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <div class="file-upload">
+            <!-- <p-fileUpload mode="basic" chooseLabel="Choose" chooseIcon="pi pi-upload" name="demo[]"
+              url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" maxFileSize="1000000" /> -->
+              <div class="file-upload">
+                <input type="file" id="upload3" class="file-input" (change)="onUpload($event,3)" formControlName="uploadCertification" accept="image/*" multiple />
+              <label for="upload3" class="file-label">
+                <span class="icon">+</span> Upload Certificate
+              </label><br>
+              <!-- <img [src]="preview" class="preview"> -->
+              <small *ngFor="let file of uploadedFiles">{{file.name}}<br></small>
+              <small class="p-error block" *ngIf="errorHandling('uploadCertification','required') && isSubmitted">
+                Certificate is required</small>
+              </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
+      <div class="col-md-12 text-center center-buttons">
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+        <button type="button" class="btn btn-secondary btn-sm" (click)="reset()">Reset</button>
+      </div>
+
+  </p-card>
+</form>
+</div>

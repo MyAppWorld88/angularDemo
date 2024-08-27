@@ -1,0 +1,43 @@
+<p>Personal-Infomation</p>
+<ng-container [formGroup]="form">
+        <!-- personal Info -->
+        <div class="row col-md-12" formGroupName="basicInfo">
+            <div class="col-md-4">
+                <mat-form-field class="d-block">
+                    <mat-label>Name</mat-label>
+                    <input matInput autocomplete="off" type="text" matTooltip="Name" formControlName="name"
+                       required>
+                        <mat-error class="err-msgs"
+                        
+                        *ngIf="errorHandling(form,'basicInfo','name','required')">
+                        <span class="errorMessage">
+                          Please Enter name.</span>
+                      </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field class="d-block">
+                    <mat-label>Mobile Number</mat-label>
+                    <input matInput autocomplete="off" type="text" matTooltip="mBNumber" formControlName="mBNumber"
+                       required>
+                        <mat-error class="err-msgs"
+                        *ngIf="errorHandling(form,'basicInfo','mBNumber','required')">
+                        <span class="errorMessage">
+                          Please Enter mBNumber.</span>
+                      </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field class="d-block">
+                    <mat-label>pincode Number</mat-label>
+                    <input matInput autocomplete="off" type="text" matTooltip="pincode" formControlName="pincode"
+                       required>
+                        <mat-error class="err-msgs"
+                        *ngIf="errorHandling(form,'basicInfo','pincode','required')">
+                        <span class="errorMessage">
+                          Please Enter pincode.</span>
+                      </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+</ng-container>        

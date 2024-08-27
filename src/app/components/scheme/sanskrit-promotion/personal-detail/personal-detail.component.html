@@ -1,0 +1,243 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Personal Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Your Details</b>
+      </p-divider>
+    <form [formGroup]="personalDetailForm" (ngSubmit)="submit()">
+      
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Name of the Person<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input type="text" class="inputArea" formControlName="name" placeholder="Name of Person" pInputText  required>
+          <small class="p-error block" *ngIf="errorHandling('name','required') && isSubmitted">
+         Name is required</small>
+         <small class="p-error block" *ngIf="errorHandling('name','textFieldWithDot')">
+          Please Enter a Valid Name</small>
+        </div>
+      </div>
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Father's Name<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text"  class="inputArea" formControlName="fatherName" placeholder="Father's Name" pInputText >
+          <small class="p-error block" *ngIf="errorHandling('fatherName','required') && isSubmitted">
+            Father's Name is required</small>
+          <small class="p-error block" *ngIf="errorHandling('fatherName','textFieldWithDot')">
+            Please Enter a Valid Name</small>
+        </div>
+      </div> 
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Mother's Name<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" formControlName="motherName" placeholder="Mother's Name" pInputText >
+          <small class="p-error block" *ngIf="errorHandling('motherName','required') && isSubmitted">
+            Mother's Name is required</small>
+          <small class="p-error block" *ngIf="errorHandling('motherName','textFieldWithDot')">
+            Please Enter a Valid Name</small>          
+        </div>
+      </div>    
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Date of Birth<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-calendar [style]="{'width':'100%', 'height':'40px'}" [inputStyle]="{'width':'88%', 'border':'1px solid #317ecb'}" formControlName="dob" [showIcon]="true"  class="formControl" icon="pi pi-calendar" dateFormat="dd/mm/yy"></p-calendar>
+          <small class="p-error block" *ngIf="errorHandling('dob','required') && isSubmitted">
+            Date of Birth is required</small>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputEmail4" >Gender<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-dropdown [options]="gender" formControlName="gender"  class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Gender" optionLabel="key" [showClear]="true"></p-dropdown>
+          <small class="p-error block" *ngIf="errorHandling('gender','required') && isSubmitted">
+            Gender is required</small>
+        </div>
+      </div> 
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Category<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-dropdown [options]="categories" formControlName="category" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Category" optionLabel="name" [showClear]="true"></p-dropdown>
+          <small class="p-error block" *ngIf="errorHandling('category','required') && isSubmitted">
+            Category is required</small>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputEmail4">Certificate<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-fileUpload 
+             name="uploadCertification[]" 
+             chooseLabel="Upload Certificate" 
+             url="https://www.primefaces.org/cdn/api/upload.php" 
+             (onUpload)="onUpload($event)" 
+             [multiple]="false"
+             maxFileSize="1000000"
+             accept="image/*x" >
+             <ng-template pTemplate="content" *ngIf="uploadedFiles.length">
+              <ul *ngIf="uploadedFiles.length">
+                  <li *ngFor="let file of uploadedFiles">
+                      {{ file.name }} - {{ file.size }} bytes
+                  </li>
+              </ul>
+          </ng-template>
+        </p-fileUpload>
+        <small class="p-error block" *ngIf="errorHandling('uploadCertification','required') && isSubmitted">
+          Category is required</small>
+        </div>
+      </div>  
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Email<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" formControlName="email" placeholder="example@gmail.com" pInputText >
+          <small class="p-error block" *ngIf="errorHandling('email','required') && isSubmitted">
+            Email is required</small>
+          <small class="p-error block" *ngIf="errorHandling('email','notEmail')">
+            Please Enter a Valid Email</small>            
+        </div>
+        <!-- <div class="form-group col-md-2">
+          <label for="inputEmail4" >Verify Email Id<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <button type="submit" class="btn btn-danger">Click here to send Email OTP</button>
+        </div> -->
+      </div>  
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4" >Mobile<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" formControlName="mobile" placeholder="9812345672" pInputText (keypress)="common.isInteger($event)"
+          maxlength="10">
+          <small class="p-error block" *ngIf="errorHandling('mobile','required') && isSubmitted">
+            Mobile is required</small>
+            <small class="p-error block" *ngIf="errorHandling('mobile','invalidMobileNumber')">
+              Please Enter a Valid Mobile</small>             
+        </div>
+        <!-- <div class="form-group col-md-2">
+          <label for="inputEmail4" >Verify Mobile<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <button type="submit" class="btn btn-danger">Click here to send Mobile OTP</button>
+        </div> -->
+      </div> 
+      <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">Institution<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input  type="text" class="inputArea" formControlName="institutionName" placeholder="Campus / Institution / College / School" pInputText >
+            <small class="p-error block" *ngIf="errorHandling('institutionName','required') && isSubmitted">
+              Institution Name is required</small>
+  
+          </div>
+        </div> 
+      <p-divider align="center" type="solid">
+        <b class="fnt20">Address</b>
+        </p-divider>
+        <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">State<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <p-dropdown [options]="states" formControlName="state" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a State" optionLabel="state" [showClear]="true"></p-dropdown>
+            <small class="p-error block" *ngIf="errorHandling('state','required') && isSubmitted">
+              State is required</small>
+          </div>
+            <div class="form-group col-md-2">
+            <label for="inputEmail4" >District<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <p-dropdown [options]="districts" formControlName="district" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a District" optionLabel="districtName" [showClear]="true"></p-dropdown>
+            <small class="p-error block" *ngIf="errorHandling('district','required') && isSubmitted">
+              District is required</small>
+          </div>
+        </div>
+       
+        <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Sub District<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-dropdown [options]="subDistricts" formControlName="subDistrict" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Sub District" optionLabel="districtName" [showClear]="true"></p-dropdown>
+          <small class="p-error block" *ngIf="errorHandling('subDistrict','required') && isSubmitted">
+            Sub-District is required</small>
+        </div>
+     
+        <div class="form-group col-md-2">
+          <label for="inputEmail4" >Block</label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-dropdown [options]="cities" formControlName="block" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Block" optionLabel="name" [showClear]="true"></p-dropdown>
+          <small class="p-error block" *ngIf="errorHandling('block','required') && isSubmitted">
+            Block is required</small>
+        </div>
+      </div> 
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Pincode<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" formControlName="pincode" placeholder="Ex:- 110006" pInputText (keypress)="common.isInteger($event)"
+          maxlength="6">
+          <small class="p-error block" *ngIf="errorHandling('pincode','required') && isSubmitted">
+            Pincode is required</small>
+          <small class="p-error block" *ngIf="errorHandling('pincode','pattern')">
+            Please enter valid 6 digits pin code</small>
+        </div>
+      </div> 
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Full Address<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <textarea pInputTextarea formControlName="fullAddress"></textarea>
+          <small class="p-error block" *ngIf="errorHandling('fullAddress','required') && isSubmitted">
+            Full Address is required</small>
+          <small class="p-error block" *ngIf="errorHandling('fullAddress','textField1')">
+            This field accept string, numbers and special characters</small>
+        </div>
+      </div>
+      <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">Occupation<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input  type="text" class="inputArea" formControlName="occupation" placeholder="Occupation of Parent/Guardian" pInputText >
+            <small class="p-error block" *ngIf="errorHandling('occupation','required') && isSubmitted">
+              Occupation is required</small>
+            <small class="p-error block" *ngIf="errorHandling('occupation','textFieldWithDot')">
+              Enter a Valid Occupation</small>            
+          </div>
+        </div> 
+        <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">Annual Income<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input  type="text" class="inputArea" formControlName="annualIncome" maxlength="7" placeholder="Annual income of entire family" pInputText >
+            <small class="p-error block" *ngIf="errorHandling('annualIncome','required') && isSubmitted">
+              Annual Income is required</small>
+            <small class="p-error block" *ngIf="errorHandling('annualIncome','numberOnly')">
+              Only Number is allowed</small>   
+          </div>
+        </div> 
+    
+     <div class="col-md-12 text-center center-buttons">
+      <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+      <button type="button" class="btn btn-secondary btn-sm" (click)="restForm()">Reset</button>
+    </div>
+    </form>
+    </p-card>
+  </div>

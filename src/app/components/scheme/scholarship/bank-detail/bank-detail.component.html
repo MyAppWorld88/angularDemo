@@ -1,0 +1,112 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+  <p-card>
+    <!-- <div class="header">
+        <h3 style="text-align: center;">Bank Details</h3>
+    </div>   -->
+<p-divider align="center" type="solid">
+    <b  class="fnt20">Bank Details</b>
+    </p-divider>
+    
+<form [formGroup]="bankDetailForm" (ngSubmit)="submit()">
+<!-- <div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Name of the Bank where account is opened by the students<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" placeholder="" pInputText >
+  </div>
+</div>  -->
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Name of the Account Holder<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" formControlName="name" placeholder="Name of the Account Holder" pInputText >
+    <small class="p-error block" *ngIf="errorHandling('name','required') && isSubmitted">
+      Account Holder Name is required</small>
+    <small class="p-error block" *ngIf="errorHandling('name','textFieldWithDot')">
+      Please Enter a Valid Name</small>
+  </div>
+</div> 
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Account Number<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" formControlName="accountNumber" placeholder="Account Number" pInputText >
+    <small class="p-error block" *ngIf="errorHandling('accountNumber','required') && isSubmitted">
+      Account Number is required</small>
+    <small class="p-error block" *ngIf="errorHandling('accountNumber','numberOnly')">
+      Please Enter a Valid Account Number</small> 
+  </div>
+</div> 
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Branch Name<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" formControlName="branchName" placeholder="Branch Name" pInputText >
+    <small class="p-error block" *ngIf="errorHandling('branchName','required') && isSubmitted">
+      Branch Name is required</small>
+    <small class="p-error block" *ngIf="errorHandling('branchName','onlytext')">
+      Please Enter a Valid Branch Name</small>    
+  </div>
+</div> 
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">IFSC Code<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" formControlName="IFSCCode" placeholder="IFSE Code" pInputText >
+    <small class="p-error block" *ngIf="errorHandling('IFSCCode','required') && isSubmitted">
+      IFSC Code is required</small>
+    <small class="p-error block" *ngIf="errorHandling('IFSCCode','numberOnly')">
+      Please Enter a Valid IFSC Code</small>
+  </div>
+</div> 
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Bank Address<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" formControlName="bankAddress" placeholder="Bank Address" pInputText >
+    <small class="p-error block" *ngIf="errorHandling('bankAddress','required') && isSubmitted">
+      Bank Address is required</small>
+    <small class="p-error block" *ngIf="errorHandling('bankAddress','textField1')">
+      Please Enter a Valid Bank Address</small>   
+  </div>
+</div>    
+<!-- <div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">In case you want only merit Scholarship award Certificate not money then please Select 'Yes' otherwise select 'No'<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'border':'1px solid #317ecb'}"  placeholder="Select a Gender" optionLabel="name" [showClear]="true"></p-dropdown>
+  </div>
+
+</div>  -->
+<!-- <div class="row mb40">
+  <p style="font-size: 14px; font-weight: 600;">Following Document is Mandatory For Scholarship Release and File Size must not be exceeded 3MB, Uploaded Docs must be readable and must not be blur.</p>
+<p style="font-size: 14px; font-weight: 600;">It is Mandatory to Merge following document in One Single PDF then Upload only, otherwise your Application Stands Cancelled.</p>
+<ul class="documentList">
+  <li>Applicant's Aadhar Card</li>
+  <li>Applicant's Bank Passbook scanned file, only first page of Passbook </li>
+  <li>College ID Card</li>
+  <li>Last year Full Marksheet of Last 2 Samesters</li>
+  <li>Category Certificate eg S.C., S.T., O.B.C, PwBD if required</li>
+</ul>
+<div class="uploadFile">
+<p-fileUpload mode="basic" name="demo[]" chooseLabel="Upload Documents" url="./upload.php" accept="image/"></p-fileUpload>
+</div>
+</div>-->
+
+
+
+
+<div class="col-md-12 text-center center-buttons">
+<button type="submit" class="btn btn-primary btn-sm">Submit</button>
+<button type="button" (click)="reset()" class="btn btn-secondary btn-sm">Reset</button>
+</div>
+</form>
+</p-card>
+</div>

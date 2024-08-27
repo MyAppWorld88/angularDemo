@@ -1,0 +1,62 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Bank Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Others Details</b>
+      </p-divider>
+      <div class="signPhoto" style="display: flex; justify-content: center; margin-top: 50px; margin-bottom: 80px;">
+        <p-toast />
+       <p-fileUpload 
+            mode="basic" 
+            chooseLabel="Choose" 
+            chooseIcon="pi pi-upload"
+            name="demo[]" 
+            url="https://www.primefaces.org/cdn/api/upload.php" 
+            accept="image/*" 
+            maxFileSize="1000000"/><br>
+            <span class="caption">Upload Passpord Size Photo</span>
+            <p-toast />
+            <p-fileUpload 
+                mode="basic" 
+                chooseLabel="Choose" 
+                chooseIcon="pi pi-upload"
+                name="demo[]" 
+                url="https://www.primefaces.org/cdn/api/upload.php" 
+                accept="image/*" 
+                maxFileSize="1000000"/><br>
+                <span class="caption">Upload Signature Photo</span>
+        </div>
+        <p-divider align="center" type="solid">
+            <!-- <b  class="fnt20">Others Details</b> -->
+        </p-divider>
+      
+<form>
+    <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Registration Number<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text"  class="inputArea"  placeholder="Registration Number" pInputText >
+        </div>
+      </div> 
+    <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Registration Date<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-calendar placeholder="Registration Date" [style]="{'width':'100%', 'height':'40px'}" [inputStyle]="{'width':'88%', 'border':'1px solid #317ecb'}" [showIcon]="true"  class="formControl" icon="pi pi-calendar" dateFormat="dd/mm/yy"></p-calendar>
+        </div>
+      </div> 
+  
+  
+  
+  
+ <div class="btn">
+  <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+  <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+</div>
+</form>
+</p-card>
+</div>

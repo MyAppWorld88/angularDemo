@@ -1,0 +1,305 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Personal Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Details of Publication Submitted for Publication</b>
+      </p-divider>
+      <form>
+      
+        <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">Type of Book<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Book" optionLabel="name" [showClear]="true"></p-dropdown>
+          </div>
+        </div>
+        <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Preference of Publisher<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Publisher" optionLabel="name" [showClear]="true"></p-dropdown>
+            </div>
+          </div>
+        <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">In case of others, specify the type<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input type="text" class="inputArea" placeholder="In case of others, specify the type" pInputText >
+          </div>
+        </div>
+        <div class="row mb40">
+            <div class="col-md-12">
+                <p>Details of the Book submitted for publication</p>
+              <form>
+
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Name of Author/Editor</th>
+                        <th scope="col">No. of Volumes of the Publication</th>
+                        <th scope="col">Number of pages in the proposed book for Publication</th>
+                        <th scope="col">Number of Copies proposed for Publication</th>
+                        <th scope="col">Brief description about the contents/deliverables of the Book(s)</th>
+                        <th scope="col">Proposed Price for publication in rupees</th>
+                        <th scope="col">100% book in Sanskrit or which language. In case of Sanskrit along with other language then mention the % of Sanskrit in the book and mention the name of other language</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of rows; let i = index">
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <!-- Add more fields as needed -->
+                        <td>
+                            <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+                            <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+                            <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+                            
+                        </td>
+                        </tr>
+                     
+                    </tbody>
+                  </table>
+                  <!-- <button (click)="addRow()">Add Row</button> -->
+                  </form>
+                </div>  
+        </div>
+        <p-divider align="center" type="solid">
+        </p-divider>
+
+        <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Whether Copyright of the each book submitting for publication with the applicant/institute <span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2">No</mat-radio-button>
+                  </mat-radio-group>
+          </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Copyright of proposed book vests with - Name of copyright holder and address<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="Name of copyright holder and address" pInputText >
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">If no, provide details on what basis you submitted this book for publication<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="you submitted this book for publication" pInputText >
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Whether 100% completed the book for printing. If no then how much percent completed. please provide the details<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="Whether 100% completed the book for printing." pInputText >
+            </div>
+          </div>
+         <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">Upload some pdf pages of each book<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input type="file"  (change)="upload($event)" />
+            <!-- Upload Percent: {{percentDone}}% <br /> -->
+            
+            <!-- <ng-container *ngIf="uploadSuccess">
+              Upload Successful
+            </ng-container>  -->
+        </div>
+        </div>
+        <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Whether submitted book is already printed or first edition<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="printed or first edition" pInputText >
+            </div>
+          </div>
+          <p-divider align="center" type="solid">
+        </p-divider>
+          <div class="row mb40">
+            <div class="col-md-12">
+                <p>Additional Details regarding above mentioned books As list mentioned above Any book published under publication scheme in last 5 years then provide the details</p>
+              <form>
+
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name of the book</th>
+                        <th scope="col">How many copies purchased</th>
+                        <th scope="col">Remarks if any</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of rows; let i = index">
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        
+                        <!-- Add more fields as needed -->
+                        <td>
+                            <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+                            <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+                            <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+                            
+                        </td>
+                        </tr>
+                     
+                    </tbody>
+                  </table>
+                  <!-- <button (click)="addRow()">Add Row</button> -->
+                  </form>
+                </div>  
+        </div>  
+
+        <p-divider align="center" type="solid">
+        </p-divider>
+          <div class="row mb40">
+            <div class="col-md-12">
+                <p>In case of submitting for Re-print then provide the Details</p>
+              <form>
+
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">S. No</th>
+                        <th scope="col">Title of the Book</th>
+                        <th scope="col">Year of Publication</th>
+                        <th scope="col">Number of Copies Published</th>
+                        <th scope="col">Number of copies Sold</th>
+                        <th scope="col">Number of Copies in Stock</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of rows; let i = index">
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        
+
+                        <!-- Add more fields as needed -->
+                        <td>
+                            <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+                            <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+                            <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+                            
+                        </td>
+                        </tr>
+                     
+                    </tbody>
+                  </table>
+                  <!-- <button (click)="addRow()">Add Row</button> -->
+                  </form>
+                </div>  
+        </div> 
+        <p-divider align="center" type="solid">
+        </p-divider> 
+        <div class="row mb40">
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">Total amount of Grants Requested for this Year<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="Total amount of Grants Requested for this Year" pInputText >
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">If any statements required then upload the same<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="file"  (change)="upload($event)" />
+              <!-- Upload Percent: {{percentDone}}% <br /> -->
+              
+              <!-- <ng-container *ngIf="uploadSuccess">
+                Upload Successful
+              </ng-container>  -->
+          </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">Do you want to publish the book by own or any registered publisher or by Central Sanskrit University<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Publisher" optionLabel="name" [showClear]="true"></p-dropdown>
+            </div>
+        </div>
+        <div class="row mb40">
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">Specify the experience of the applicant /organization/Institution of the publication of such work<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="Specify the experience of the applicant /organization/Institution" pInputText >
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">Total Expenditure involved in the publication detailed break-up of this expenditure should be given in such a way that each item is capable of being checked up. Estimates from at lest two reputed printers should be attached in support of the reasonability of the cost of printing <span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="file"  (change)="upload($event)" />
+              <!-- Upload Percent: {{percentDone}}% <br /> -->
+              
+              <!-- <ng-container *ngIf="uploadSuccess">
+                Upload Successful
+              </ng-container>  -->
+          </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">Complete book alongwith introduction, subject index of the work for which grants has been asked for, should be attached with hard copy of application and two quotations from two different printers (yes/no)<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="two different printers" pInputText >
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">Reason as to why publication cannot be self-supporting ? Give reason <span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="Reason as to why publication cannot be self-supporting" pInputText >
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-4">
+              <label for="inputEmail4">Complete book alongwith introduction, subject index of the work for which grants has been asked for, should be attached with hard copy of application and two quotations from two different printers (yes/no)<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="two different printers" pInputText >
+            </div>
+          </div>
+      
+       <div class="btn">
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+        <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+      </div>
+      </form>
+    </p-card>
+  </div>

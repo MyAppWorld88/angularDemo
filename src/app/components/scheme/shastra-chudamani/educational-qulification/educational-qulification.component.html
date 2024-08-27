@@ -1,0 +1,78 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+  <!-- <p-divider align="center" type="solid">
+      <b  class="fnt20">Details of Proposed Vocational Training</b>
+      </p-divider> -->
+      <form>
+        <div class="row" style="margin-bottom: 60px;">
+          <div class="form-group col-md-2">
+            <label for="inputEmail4">Select Type<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-2">
+            <p-dropdown (onChange)="getType($event)" [options]="typeArr" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Account Type" optionLabel="name" [showClear]="true"></p-dropdown>
+          </div>
+        </div>     
+<table class="table table-bordered" *ngIf="isTypeVisible == true">
+    <thead>
+      <tr>
+        <th scope="col">Serial No</th>
+        <th scope="col">Name of Examination</th>
+        <th scope="col">Name of University</th>
+         <th scope="col">Subject of Specialization</th>
+         <th scope="col">Upload Photo</th>
+         <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of rows; let i = index">
+            <td><input type="text" class="inputArea" pInputText name="serialNo{{i}}" [(ngModel)]="row.serialNo" /></td>
+            <td><input type="text" class="inputArea" pInputText name="nameOfExamination{{i}}" [(ngModel)]="row.nameOfExamination" /></td>
+            <td><input type="text" class="inputArea" pInputText name="nameOfUniversity{{i}}" [(ngModel)]="row.nameOfUniversity" /></td>
+            <td><input type="text" class="inputArea" pInputText name="subjectOfSpecialization{{i}}" [(ngModel)]="row.subjectOfSpecialization" /></td>
+            <td><input type="file"  /></td>
+
+            <td>
+            <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+            <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+            <!-- <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i> -->
+            <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+            
+        </td>
+        </tr>
+     
+    </tbody>
+  </table>
+  <table class="table table-bordered" *ngIf="isTypeVisible == false">
+    <thead>
+      <tr>
+        <th scope="col">Serial No</th>
+        <th scope="col">Name of the Qualified Traditional Exam</th>
+        <th scope="col">Name of the Gurukulam/Institution/Guru</th>
+         <th scope="col">Subject of Specialization</th>
+         <th scope="col">Upload Documents</th>
+         <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of rows; let i = index">
+            <td><input type="text" class="inputArea" pInputText name="serialNo{{i}}" [(ngModel)]="row.serialNo" /></td>
+            <td><input type="text" class="inputArea" pInputText name="nameOfExamination{{i}}" [(ngModel)]="row.nameOfExamination" /></td>
+            <td><input type="text" class="inputArea" pInputText name="nameOfUniversity{{i}}" [(ngModel)]="row.nameOfUniversity" /></td>
+            <td><input type="text" class="inputArea" pInputText name="subjectOfSpecialization{{i}}" [(ngModel)]="row.subjectOfSpecialization" /></td>
+            <td><input type="file"  /></td>
+
+            <td>
+            <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+            <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+            <!-- <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i> -->
+            <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+            
+        </td>
+        </tr>
+     
+    </tbody>
+  </table>
+  </form>
+  </p-card>
+  </div>
+  

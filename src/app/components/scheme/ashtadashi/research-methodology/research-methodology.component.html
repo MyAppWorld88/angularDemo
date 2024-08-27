@@ -1,0 +1,54 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+        <p-divider align="center" type="solid">
+        <b  class="fnt20">Research Methodology For Completion Of The Project</b>
+    </p-divider>
+    <form>
+        <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4"> Brief introduction about the present project proposal: Summary of the Project/research proposal (about 500 words), a separate sheet may be enclosed.<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <textarea pInputTextarea></textarea>
+            </div>
+          </div>
+        
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Additional information about the present project proposal to be attached: (Only pdf/word file may upload) <span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+            <input type="file"  (change)="upload($event)" />
+            <!-- Upload Percent: {{percentDone}}% <br /> -->
+            
+            <!-- <ng-container *ngIf="uploadSuccess">
+              Upload Successful
+            </ng-container>  -->
+      </div>
+      </div>
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4"> (a) Coverage of the project.<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+            <input  type="text" class="inputArea" placeholder="Pincode" pInputText >
+      </div>
+      </div>
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">(b) Details of data Collection/analysis or any other activity of the project.<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+            <input  type="text" class="inputArea" placeholder="Pincode" pInputText >
+      </div>
+      </div>
+    
+      
+    
+     <div class="btn">
+      <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+      <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+      </div>
+    </form>
+    </p-card>
+  </div>

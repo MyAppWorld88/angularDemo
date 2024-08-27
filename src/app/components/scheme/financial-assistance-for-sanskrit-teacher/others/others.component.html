@@ -1,0 +1,119 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Bank Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Others Details</b>
+      </p-divider>
+      <div class="signPhoto" style="display: flex; justify-content: center; margin-top: 50px; margin-bottom: 80px;">
+        <p-toast />
+       <p-fileUpload 
+            mode="basic" 
+            chooseLabel="Choose" 
+            chooseIcon="pi pi-upload"
+            name="demo[]" 
+            url="https://www.primefaces.org/cdn/api/upload.php" 
+            accept="image/*" 
+            maxFileSize="1000000"/><br>
+            <span class="caption">Upload Passpord Size Photo</span>
+            <p-toast />
+            <p-fileUpload 
+                mode="basic" 
+                chooseLabel="Choose" 
+                chooseIcon="pi pi-upload"
+                name="demo[]" 
+                url="https://www.primefaces.org/cdn/api/upload.php" 
+                accept="image/*" 
+                maxFileSize="1000000"/><br>
+                <span class="caption">Upload Signature Photo</span>
+        </div>
+        <p-divider align="center" type="solid">
+            <!-- <b  class="fnt20">Others Details</b> -->
+        </p-divider>
+      
+<form>
+    <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Registration Number<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text"  class="inputArea"  placeholder="Registration Number" pInputText >
+        </div>
+      </div> 
+    <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Registration Date<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-calendar placeholder="Registration Date" [style]="{'width':'100%', 'height':'40px'}" [inputStyle]="{'width':'88%', 'border':'1px solid #317ecb'}" [showIcon]="true"  class="formControl" icon="pi pi-calendar" dateFormat="dd/mm/yy"></p-calendar>
+        </div>
+      </div> 
+  
+  
+      <p-divider align="center" type="solid">
+        <b  class="fnt20"></b>
+    </p-divider> 
+    <div class="row mb40">
+        <div class="col-md-12">
+            <p>Sources from which Financial Assistance has been received including grants from State Govt. 
+              Local Bodies/Trusts/ Govt. of India etc. except Central Sanskrit University, Delhi. 
+              (Incase grants received then please enclose the details)</p>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Year</th>
+                    <th scope="col">Category </th>
+                    <th scope="col">Type of Teacher </th>
+                    <th scope="col">Subject to be taught by the Teacher</th>
+                    <th scope="col">No. of Teachers</th>
+                    <th scope="col">Source from where financial assistance has been received </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><p-dropdown [options]="yearArr" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Year" optionLabel="name" [showClear]="true"></p-dropdown></td>
+                    <td><p-dropdown [options]="categoryArr" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Category" optionLabel="name" [showClear]="true"></p-dropdown></td>
+                    <td><p-dropdown [options]="teacherArr" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Type" optionLabel="name" [showClear]="true"></p-dropdown></td>
+                    <td><input  type="text"  class="inputArea"  placeholder="" pInputText ></td>
+                    <td><p-dropdown [options]="noTeacherArr" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Teacher" optionLabel="name" [showClear]="true"></p-dropdown></td>
+                  <td><input  type="text"  class="inputArea"  placeholder="" pInputText ></td>
+                    </tr>
+                 
+                </tbody>
+              </table>
+            </div>  
+</div>
+<div class="row mb40">
+  <div class="form-group col-md-3">
+    <label for="inputEmail4">Whether grants received from the CSU are directly credited to the bank accounts of the teachers<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+      <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Yes</mat-radio-button>
+          <mat-radio-button value="2">No</mat-radio-button>
+        </mat-radio-group>
+</div>
+</div> 
+<div class="row mb40">
+  <div class="form-group col-md-3">
+    <label for="inputEmail4">if yes please upload the proof<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input type="file"  (change)="upload($event)" />
+    <!-- Upload Percent: {{percentDone}}% <br /> -->
+    
+    <!-- <ng-container *ngIf="uploadSuccess">
+      Upload Successful
+    </ng-container>  -->
+</div>
+</div> 
+  
+  
+ <div class="btn">
+  <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+  <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+</div>
+</form>
+</p-card>
+</div>

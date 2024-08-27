@@ -1,0 +1,112 @@
+
+      
+<!-- <form>
+
+  <div class="row mb40">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Particular of subject/studies or other significant work<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-4">
+      <input  type="text" class="inputArea" placeholder="Particular of subject/studies" pInputText >
+    </div>
+  </div> 
+  <div class="row mb40">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Academic qualification (true copies of Degree/Diplomas to be attached)<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-4">
+      <input  type="text" class="inputArea" placeholder="Academic qualification" pInputText >
+    </div>
+  </div> 
+  <div class="row mb40">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Particulars of any recognition or distinction received from Govt. or any prominent literary or arts society<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-4">
+      <input  type="text" class="inputArea" placeholder="Particulars of any recognition or distinction " pInputText >
+     
+    </div>
+  </div> 
+  <div class="row mb40">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Have you ever participated in any Pandit Parishad (Please mention Participation Date Orgnization and Subject/topic)<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-4">
+      <input  type="text" class="inputArea" placeholder="participated in any Pandit Parishad" pInputText >
+    </div>
+  </div> 
+  <div class="row mb40">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Any paper presented/publications (title to be given)<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-4">
+      <input  type="text" class="inputArea" placeholder="presented/publications" pInputText >
+     
+    </div>
+  </div> 
+  <div class="row mb40">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">If participated upload the details<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-4">
+      <input  type="text" class="inputArea" placeholder="participated upload the details" pInputText >
+     
+    </div>
+  </div> 
+  <div class="row mb40">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">if yes, Upload the published paper<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-4">
+      <input  type="text" class="inputArea" placeholder="Upload the published paper" pInputText >
+     
+    </div>
+  </div> 
+  
+  
+  
+ <div class="btn">
+  <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+  <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+</div>
+</form> -->
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+  <p-card>
+<!-- <p-divider align="center" type="solid">
+    <b  class="fnt20">Details of Proposed Vocational Training</b>
+    </p-divider> -->
+    <form>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Serial No</th>
+      <th scope="col">Name of Examination</th>
+      <th scope="col">Name of University</th>
+      <th scope="col">Subject of Specialization</th>
+      <th scope="col">Upload Related Documents</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let row of rows; let i = index">
+          <td><input type="text" class="inputArea" pInputText name="serialNo{{i}}" [(ngModel)]="row.serialNo" /></td>
+          <td><input type="text" class="inputArea" pInputText name="nameOfExamination{{i}}" [(ngModel)]="row.nameOfExamination" /></td>
+          <td><input type="text" class="inputArea" pInputText name="nameOfUniversity{{i}}" [(ngModel)]="row.nameOfUniversity" /></td>
+          <td><input type="text" class="inputArea" pInputText name="subjectOfSpecialization{{i}}" [(ngModel)]="row.subjectOfSpecialization" /></td>
+          <td><input type="file" class="inputArea" pInputText name="subjectOfSpecialization{{i}}" [(ngModel)]="row.subjectOfSpecialization" /></td>
+      <td>
+          <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+          <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+          <!-- <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i> -->
+          <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+       
+          
+      </td>
+      </tr>
+   
+  </tbody>
+</table>
+</form>
+</p-card>
+</div>
+

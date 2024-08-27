@@ -1,0 +1,133 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Personal Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Infrastructure Details</b>
+      </p-divider>
+      <form>
+        <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">Whether any assets have been acquired from the Govt. of India/UGC<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
+              </mat-radio-group>
+        </div>
+        </div>
+        <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Documentary evidence of Land & Building<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <input type="file"  (change)="upload($event)" />
+                <!-- Upload Percent: {{percentDone}}% <br /> -->
+                
+                <!-- <ng-container *ngIf="uploadSuccess">
+                  Upload Successful
+                </ng-container>  -->
+
+          </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">(a) Description of Land Plinth Area & No. of Rooms in the College Building<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input  type="text" class="inputArea" placeholder="No. of Rooms in the College Building" pInputText >
+            </div>
+          </div> 
+     
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">(b) Description of Land Plinth Area & No. of Rooms and Beds in Hostel (Girls/Boys)<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <input  type="text" class="inputArea" placeholder=" No. of Rooms and Beds in Hostel (Girls/Boys)" pInputText >
+          </div>
+          </div>
+          <div class="row mb40">
+          
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Whether hostel facilities are available in the institution<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <p-dropdown [options]="institutionArr" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Sub District" optionLabel="name" [showClear]="true"></p-dropdown>
+
+          </div>
+          </div>
+          <p-divider align="center" type="solid">
+            <b  class="fnt20"></b>
+        </p-divider> 
+        <div class="row mb40">
+            <div class="col-md-12">
+                <p>In case of yes please provide the details of the Hostel (In case not applicable then mentioned in the box that NA)</p>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">How many boys students are staying at hostel </th>
+                        <th scope="col">How many Girls students are staying at hostel</th>
+                        <th scope="col">Whether Breakfast, Lunch and Dinner facilities are being provided to the hostel students by the Institution</th>
+                        <th scope="col">Whether Breakfast, Lunch and Dinner facilities are being provided to the hostel students by the Institution by free of cost or nominal fees</th>
+                        <th scope="col">In case fees collected for providing breakfast, lunch & dinner then how much amount collected ? details please</th>
+                        <th scope="col">If any grants are being received from any other sources for providing lunch/dinner/breakfast to the students</th>
+                        <th>Whether Central Sanskrit University provided the residential scholarship to the students then how many students are getting the residential scholarships in previous year</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                     
+                    </tbody>
+                  </table>
+                </div>  
+        </div>
+        <p-divider align="center" type="solid">
+            <b  class="fnt20"></b>
+        </p-divider>
+
+        <div class="row mb40">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Upload the menu details of the meals and breakfast of residential students for total week alongwith pictures<span class="asterisk">*</span></label>
+          </div>
+        <div class="form-group col-md-3">
+            <input type="file"  (change)="upload($event)" />
+            <!-- Upload Percent: {{percentDone}}% <br /> -->
+            
+            <!-- <ng-container *ngIf="uploadSuccess">
+              Upload Successful
+            </ng-container>  -->
+
+      </div>
+      </div>
+        <div class="row mb40">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Grant received from Govt. of India for construction of building since its inception.<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+
+       
+      
+       <div class="btn">
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+        <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+      </div>
+      </form>
+    </p-card>
+  </div>

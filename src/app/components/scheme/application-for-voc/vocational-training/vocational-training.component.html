@@ -1,0 +1,188 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Personal Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Details of Proposed Vocational Training</b>
+      </p-divider>
+      <form>
+      
+        <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">Name of the Vocational Course<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input type="text" class="inputArea" placeholder="Name of the Vocational Course" pInputText >
+          </div>
+        </div>
+        <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Area of the Course<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Course" optionLabel="name" [showClear]="true"></p-dropdown>
+            </div>
+          </div>
+        <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">Theme of the Training Programme<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input type="text" class="inputArea" placeholder="Theme of the Training Programme" pInputText >
+          </div>
+        </div>
+        <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Minimum Educational Qualifications prescribed for students<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="Educational Qualifications prescribed for students" pInputText >
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">What is the age group of proposed participants<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="What is the age group of proposed participants" pInputText >
+            </div>
+          </div>
+        <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">Outcomes of the programme<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input type="file"  (change)="upload($event)" />
+            <!-- Upload Percent: {{percentDone}}% <br /> -->
+            
+            <!-- <ng-container *ngIf="uploadSuccess">
+              Upload Successful
+            </ng-container>  -->
+        </div>
+        </div>
+        <p-divider align="center" type="solid">
+            <b  class="fnt20"></b>
+            </p-divider>
+        <div class="row mb40">
+            <div class="col-md-12">
+                <p>Details of Participants</p>
+              <form>
+
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col">Number of expected Participants</th>
+                        <th scope="col">How many days of the event</th>
+                        <th scope="col">What are the timings of the programme in each day and how many hours</th>
+                        <th scope="col">Name, designation and field of the proposed invitees/guests/experts for the event</th>
+                        <th scope="col">Proposed contents / lectures / themes / topics to be taught by the experts</th>
+                        <th scope="col">Venue of the event and proposed days and time of the event</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let row of rows; let i = index">
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td><input type="text" class="inputArea" pInputText /></td>
+                        <td>
+                            <i (click)="editRow(i)" class="pi pi-pencil" style="color: gray"></i>
+                            <i (click)="deleteRow(i)" class="pi pi-trash" style="color: red"></i>
+                            <i (click)="addRow()" class="pi pi-plus" style="color: green"></i>
+                            
+                        </td>
+                        </tr>
+                     
+                    </tbody>
+                  </table>
+                  <!-- <button (click)="addRow()">Add Row</button> -->
+                  </form>
+                </div>  
+        </div>
+
+
+        <p-divider align="center" type="solid">
+            </p-divider>
+        <div class="row mb40">
+            <div class="col-md-12">
+<p>Funding Details - Budget Indicating amount to be incurred on TA/DA, Hospitality, Transport, Stationary Secretarial, Typing and Xeroxing work and other contingent expenditure etc.</p>
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Category </th>
+                        <th scope="col">Required Quantity of the item/persons/equipment</th>
+                        <th scope="col">Amount to be required</th>
+                        <th scope="col">Remarks or in case of other item then specify the requirement</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        
+                        </tr>
+                     
+                    </tbody>
+                  </table>
+                </div>  
+        </div>
+        <p-divider align="center" type="solid">
+        </p-divider>
+
+    <div class="row mb40">
+        <div class="col-md-12">
+<p>Funding from Own Institution and Other Sources</p>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">Total required amount for event/programme </th>
+                    <th scope="col">Details of amount to be gathered form other sources</th>
+                    <th scope="col">Whether joint collaboration or the institution conducting by own resources</th>
+                    <th scope="col">What are the resources available in the institution</th>
+                    <th scope="col">Any Remarks</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
+                    </tr>
+                 
+                </tbody>
+              </table>
+            </div>  
+    </div>
+
+ <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">Outcomes of the programme<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+            <input type="file"  (change)="upload($event)" />
+            <!-- Upload Percent: {{percentDone}}% <br /> -->
+            
+            <!-- <ng-container *ngIf="uploadSuccess">
+              Upload Successful
+            </ng-container>  -->
+        </div>
+        </div>
+       
+      
+       <div class="btn">
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+        <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+      </div>
+      </form>
+    </p-card>
+  </div>

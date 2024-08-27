@@ -1,0 +1,76 @@
+
+
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Exo:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    // font-family: Arial, sans-serif;
+    // background-color: #f0f2f5;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // height: 100vh;
+    // margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Exo", sans-serif;
+  background-color: #f1f1f1;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a6d5fb;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #012645;
+}
+
+
+.main-container2 {
+    display: flex;
+    .side-nav {
+      width: 350px;
+      min-width: 230px;
+      min-height: calc(100vh - 70px);
+      background-color: #113c60;
+      color: #fff;
+      box-shadow: 5px 5px 5px #939393;
+    //   @media only screen and (max-width: 1280px) {
+    //     width: 100px;
+    //     min-width: 100px;
+    //   }
+    }
+    .side-nav.min-width-changed {
+        width: 100px;
+        min-width: 100px;
+        // @media only screen and (min-width: 1200px) {
+        //     width: 350px;
+        //     min-width: 230px;
+        //   }
+    }
+    .main {
+      padding: 30px;
+      width: 100%;
+    }
+  }

@@ -1,0 +1,232 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Details of Applicant</b>
+      </p-divider>
+    <form>
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Full Name<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input type="text" class="inputArea" placeholder="Full Name" pInputText >
+        </div>
+      </div>
+           <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Designation<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input type="text" class="inputArea" placeholder="Designation" pInputText >
+        </div>
+      </div>
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Email<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input type="text" class="inputArea" placeholder="Email" pInputText >
+        </div>
+      </div>
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Mobile Number<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text"  class="inputArea"  placeholder="Mobile Number" pInputText >
+        </div>
+      </div> 
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Renewal Application / Fresh<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+            <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Renewal Application / Fresh" optionLabel="name" [showClear]="true"></p-dropdown>
+
+        </div>
+      </div> 
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">In case of Renewal Provide CSU file number<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+            <input  type="text"  class="inputArea"  placeholder="In case of Renewal Provide CSU file number" pInputText >
+
+
+        </div>
+      </div> 
+      <p-divider align="center" type="solid">
+        <b  class="fnt20">Details of the Institution</b>
+        </p-divider>
+        <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Name of the Institution/Publisher<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="Name of the Institution" pInputText >
+            </div>
+          </div>
+               <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Year of Establishment of Institution/Publisher<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="Year of Establishment of Institution" pInputText >
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Name of the Parent Body<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="inputArea" placeholder="Name of the Parent Body" pInputText >
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Type of Parent Body<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Parent Body" optionLabel="name" [showClear]="true"></p-dropdown>
+            </div>
+          </div>
+          <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">Registration Number<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+                <input type="text" class="inputArea" placeholder="Registration Number" pInputText >
+
+            </div>
+          </div> 
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Registration Date<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-calendar placeholder="Registration Date" [style]="{'width':'100%', 'height':'40px'}" [inputStyle]="{'width':'88%', 'border':'1px solid #317ecb'}" [showIcon]="true"  class="formControl" icon="pi pi-calendar" dateFormat="dd/mm/yy"></p-calendar>
+        </div>
+      </div> 
+      
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Institutional/Publisher's Mobile Number<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" placeholder="Institutional/Publisher's Mobile Number" pInputText >
+        </div>
+      </div>
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">E-Mail<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" placeholder="E-Mail" pInputText >
+        </div>
+      </div>    
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Upload the copy of Registration Certificate<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+            <input type="file" (change)="upload($event)" />
+            <!-- Upload Percent: {{percentDone}}% <br /> -->
+            
+            <!-- <ng-container *ngIf="uploadSuccess">
+              Upload Successful
+            </ng-container>  -->
+        </div>
+      </div>
+
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Prospectus / Note giving aims and objectives of the institution<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+            <input type="file" (change)="upload($event)" />
+            <!-- Upload Percent: {{percentDone}}% <br /> -->
+            
+            <!-- <ng-container *ngIf="uploadSuccess">
+              Upload Successful
+            </ng-container>  -->
+        </div>
+      </div>
+
+      
+
+     
+      <p-divider align="center" type="solid">
+        <b class="fnt20">Address</b>
+        </p-divider>
+        <div class="row mb40">
+          <div class="form-group col-md-3">
+            <label for="inputEmail4">Country<span class="asterisk">*</span></label>
+          </div>
+          <div class="form-group col-md-3">
+              <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Country" optionLabel="name" [showClear]="true"></p-dropdown>
+          </div>
+        </div>
+        <div class="row mb40">
+            <div class="form-group col-md-3">
+              <label for="inputEmail4">State<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a State" optionLabel="name" [showClear]="true"></p-dropdown>
+            </div>
+              <div class="form-group col-md-2">
+              <label for="inputEmail4" >District<span class="asterisk">*</span></label>
+            </div>
+            <div class="form-group col-md-3">
+              <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a District" optionLabel="name" [showClear]="true"></p-dropdown>
+            </div>
+          </div>
+        
+       
+        <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Sub District<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Sub District" optionLabel="name" [showClear]="true"></p-dropdown>
+        </div>
+     
+        <div class="form-group col-md-2">
+          <label for="inputEmail4" >Block</label>
+        </div>
+        <div class="form-group col-md-3">
+          <p-dropdown [options]="cities" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Block" optionLabel="name" [showClear]="true"></p-dropdown>
+        </div>
+      </div> 
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Pincode<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" placeholder="Pincode" pInputText >
+        </div>
+      </div> 
+      <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Full Address<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <textarea pInputTextarea></textarea>
+        </div>
+      </div>
+     
+      <!-- <div class="row mb40">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">Institutional Phone Number<span class="asterisk">*</span></label>
+        </div>
+        <div class="form-group col-md-3">
+          <input  type="text" class="inputArea" placeholder="" pInputText >
+        </div>
+      </div> -->
+    
+     <div class="btn">
+      <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+      <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+      </div>
+    </form>
+    </p-card>
+  </div>

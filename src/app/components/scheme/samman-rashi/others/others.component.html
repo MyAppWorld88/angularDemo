@@ -1,0 +1,179 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+    <p-card>
+      <!-- <div class="header">
+          <h3 style="text-align: center;">Bank Details</h3>
+      </div>   -->
+  <p-divider align="center" type="solid">
+      <b  class="fnt20">Others Details</b>
+      </p-divider>
+      <div class="signPhoto" style="display: flex; justify-content: center; margin-top: 50px; margin-bottom: 80px;">
+        <p-toast />
+       <p-fileUpload 
+            mode="basic" 
+            chooseLabel="Choose" 
+            chooseIcon="pi pi-upload"
+            name="demo[]" 
+            url="https://www.primefaces.org/cdn/api/upload.php" 
+            accept="image/*" 
+            maxFileSize="1000000"/><br>
+            <span class="caption">Upload Passpord Size Photo</span>
+            <p-toast />
+            <p-fileUpload 
+                mode="basic" 
+                chooseLabel="Choose" 
+                chooseIcon="pi pi-upload"
+                name="demo[]" 
+                url="https://www.primefaces.org/cdn/api/upload.php" 
+                accept="image/*" 
+                maxFileSize="1000000"/><br>
+                <span class="caption">Upload Signature Photo</span>
+        </div>
+        <p-divider align="center" type="solid">
+            <!-- <b  class="fnt20">Others Details</b> -->
+        </p-divider>
+      
+<form>
+  <div class="row mb40">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Annual Income for current financial year<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-3">
+      <input  type="text" class="inputArea" placeholder="Current Annual Income " pInputText >
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputEmail4">Upload Income Certificate</label>
+    </div>
+    <div class="form-group col-md-2">
+      <input  type="file"  >
+    </div>
+  </div> 
+ 
+  <div class="row mb40">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Wheather you received any grant/assistance from other source<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-3">
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Yes</mat-radio-button>
+        <mat-radio-button value="2">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div> 
+  <div class="row mb40">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Amount of other source<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-3">
+      <input  type="text" class="inputArea" placeholder="Amount of grant/assistance" pInputText >
+     
+    </div>
+
+  <div class="form-group col-md-3">
+    <label for="inputEmail4">Upload Documents</label>
+  </div>
+  <div class="form-group col-md-2">
+    <input  type="file"  >
+  </div>
+</div> 
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Wheather you applied for grant<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Yes</mat-radio-button>
+      <mat-radio-button value="2">No</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="form-group col-md-3">
+    <label for="inputEmail4">if yes, please select year</label>
+  </div>
+  <div class="form-group col-md-2">
+    <p-calendar placeholder="select year" [style]="{'width':'100%', 'height':'40px'}" [inputStyle]="{'width':'88%', 'border':'1px solid #317ecb'}" [showIcon]="true"  class="formControl" icon="pi pi-calendar" dateFormat="dd/mm/yy"></p-calendar>
+
+  </div>
+</div> 
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Any paper presented/publications (title to be given)<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Yes</mat-radio-button>
+      <mat-radio-button value="2">No</mat-radio-button>
+    </mat-radio-group>
+  </div>
+ 
+</div>
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Publish paper printed details</label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text"  >
+    
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="file"  >
+  </div>
+  <div class="form-group col-md-2">
+   
+    
+  </div>
+</div> 
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Immovable property owned in name of self, spouse or children present approximate value<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" placeholder="Immovable property" pInputText >
+  </div>
+</div> 
+  <div class="row mb40">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Particulars of any recognition or distinction received from Govt. or any prominent literary or arts society<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-3">
+      <input  type="text" class="inputArea" placeholder="Your previous application " pInputText >
+    </div>
+    <div class="form-group col-md-3">
+      <input  type="file"  >
+    </div>
+    <div class="form-group col-md-2">
+     
+      
+    </div>
+  </div> 
+  <div class="row mb40">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Have you ever participated in any Pandit Parishad (Please mention Participation Date, Organization and Subject/topic)<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-3">
+      <input  type="text" class="inputArea" placeholder="please upload the same" pInputText >
+     
+    </div>
+    <div class="form-group col-md-3">
+      <input  type="file"  >
+    </div>
+    <div class="form-group col-md-2">
+    
+  </div> 
+  </div>
+  <div class="row mb40">
+    <div class="form-group col-md-4">
+      <label for="inputEmail4">Any other details or relevant information to support your application<span class="asterisk">*</span></label>
+    </div>
+    <div class="form-group col-md-3">
+      <input  type="text" class="inputArea" placeholder="Please mention reasons for that" pInputText >
+     
+    </div>
+  </div> 
+  
+  
+ <div class="btn">
+  <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+  <button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+</div>
+</form>
+</p-card>
+</div>

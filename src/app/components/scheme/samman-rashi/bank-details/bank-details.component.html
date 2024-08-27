@@ -1,0 +1,128 @@
+<div class="col-md-12 row" style="background-color: #f9fafb; padding-left: .35rem;">
+  <p-card>
+    <!-- <div class="header">
+        <h3 style="text-align: center;">Bank Details</h3>
+    </div>   -->
+<p-divider align="center" type="solid">
+    <b  class="fnt20">Bank Details</b>
+    </p-divider>
+    
+<form>
+<!-- <div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Name of the Bank where account is opened by the students<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" placeholder="" pInputText >
+  </div>
+</div>  -->
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Name of the Account Holder<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" placeholder="Name of the Account Holder" pInputText >
+  </div>
+</div> 
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Account Type<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <p-dropdown [options]="accType" class="formControl" [style]="{'width':'100%', 'height' :'40px', 'border':'1px solid #317ecb'}"  placeholder="Select a Account Type" optionLabel="name" [showClear]="true"></p-dropdown>
+  </div>
+</div> 
+<!-- <div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Father/Guardians<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" placeholder="Father/Guardians" pInputText >
+   
+  </div>
+</div> 
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Mother Name<br><span>as per aadhar card</span><span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" placeholder="Mother Name" pInputText >
+   
+  </div>
+</div>  -->
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Account Number<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" placeholder="Account Number" pInputText >
+   
+  </div>
+</div> 
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Branch Name<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" placeholder="Branch Name" pInputText >
+  </div>
+</div> 
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">IFSE Code<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" placeholder="IFSE Code" pInputText >
+   
+  </div>
+</div> 
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Bank Address<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" placeholder="Bank Address" pInputText >
+  </div>
+</div>  
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Pan Number<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" placeholder="Pan Number" pInputText >
+  </div>
+</div> 
+<!-- <div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Tan Number<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input  type="text" class="inputArea" placeholder="Tan Number" pInputText >
+  </div>
+</div>    -->
+<div class="row mb40">
+  <div class="form-group col-md-4">
+    <label for="inputEmail4">Upload Passbook<br>(please upload the copy of the front of the page of passbook)<span class="asterisk">*</span></label>
+  </div>
+  <div class="form-group col-md-3">
+    <input type="file"  />
+    <!-- Upload Percent: {{percentDone}}% <br /> -->
+    
+    <!-- <ng-container *ngIf="uploadSuccess">
+      Upload Successful
+    </ng-container>  -->
+</div>
+</div> 
+<div style="margin-left: 20px;">
+  <p><b>Note: -</b> Bank details must be of Institution only. </p>
+</div>
+
+
+
+<div class="btn">
+<button type="submit" class="btn btn-primary btn-sm">Submit</button>
+<button type="submit" class="btn btn-secondary btn-sm">Reset</button>
+</div>
+</form>
+</p-card>
+</div>
