@@ -1,51 +1,63 @@
 <h3>Dynamic Form</h3>
 <form [formGroup]="myForm" (ngSubmit)="submit()">
 <div class="row col-md-12" >
-    <ng-container *ngFor="let data of formConfig">
-    <div class="col-md-4" *ngIf="data.type=='text'">
-        <mat-form-field class="d-block">
-            <mat-label>{{data.label}}</mat-label>
-            <input matInput  autocomplete="off" type="data.type" matTooltip="data.placeholder" formControlName="{{data.formControlName}}"
-            >
-                <mat-error class="err-msgs"
-                *ngIf="errorHandling(myForm,data.formControlName,data.isRequired)">
-                <span class="errorMessage">
-                  Please Enter name.</span>
-              </mat-error>
-        </mat-form-field>
-
-    </div>
-    <div class="col-md-4" *ngIf="data.type=='select'">
+    <ng-container *ngFor="let data of formConfig;let i=index;">
+    <div class="col-md-4 mb-2" *ngIf="data.type=='select' && data.visibility===true">
 
         <mat-form-field class="d-block">
             <mat-label>{{data.label}}</mat-label>
-            <mat-select formControlName="{{data.formControlName}}">
+            <mat-select formControlName="{{data.formControlName}}" (selectionChange)="data.label==='Country'? getStates($event):''">
               <mat-option [value]="op.value" *ngFor="let op of data.options">{{op.label}}</mat-option>
             </mat-select>
                 <mat-error class="err-msgs"
                 *ngIf="errorHandling(myForm,data.formControlName,data.isRequired)">
                 <span class="errorMessage">
-                  Please Enter Country.</span>
+                 {{data.errorMessage}}</span>
               </mat-error>
         </mat-form-field>
+    </div>   
+    <div class="col-md-4 mb-2" *ngIf="data.type=='radio' && data.visibility===true">
+
+        <mat-label>{{data.label}}</mat-label>
+        <mat-radio-group formControlName="{{data.formControlName}}" (change)="data.label=='Select Residency'?checkAbroadAddr($event.value):''">
+          <mat-radio-button [value]="gender.value" *ngFor="let gender of data.options">{{gender.label}}</mat-radio-button>
+        </mat-radio-group>
+     
+        <mat-error class="err-msgs"
+        *ngIf="errorHandling(myForm,data.formControlName,data.isRequired) && isSubmitted">
+        <span class="errorMessage pl-2 ml-3" style="font-size: 12px;margin-left: 16px;">
+            {{data.errorMessage}}</span>
+      </mat-error>
+
     </div>
-    
-    <div class="col-md-4" *ngIf="data.type=='textarea'">
+    <div class="col-md-4 mb-2" *ngIf="data.type=='textarea' && data.visibility===true">
         <mat-form-field class="d-block">
                 <mat-label>{{data.label}}</mat-label>
                 <textarea matInput formControlName="{{data.formControlName}}"></textarea>
                 <mat-error class="err-msgs"
                 *ngIf="errorHandling(myForm,data.formControlName,data.isRequired)">
                 <span class="errorMessage">
-                  Please Enter.</span>
+                    {{data.errorMessage}}</span>
               </mat-error>
         </mat-form-field>
     </div>
-    <div class="col-md-6" *ngIf="data.type=='radio'">
-        <label>{{data.label}}</label>
-        <mat-radio-group formControlName="{{data.formControlName}}">
-          <mat-radio-button [value]="gender.value" *ngFor="let gender of data.options">{{gender.label}}</mat-radio-button>
-        </mat-radio-group>
+    <div class="col-md-4 mb-2" *ngIf="data.type=='text' && data.visibility===true">
+        <mat-form-field class="d-block">
+            <mat-label>{{data.label}}</mat-label>
+            <input matInput  autocomplete="off" type="data.type" matTooltip="data.placeholder" formControlName="{{data.formControlName}}" maxlength="{{data.maxValue}}"
+            >
+                <mat-error class="err-msgs"
+                *ngIf="errorHandling(myForm,data.formControlName,data.isRequired)">
+                <span class="errorMessage">
+                    {{data.errorMessage}}</span>
+                </mat-error>
+                <mat-error class="err-msgs"
+                *ngIf="errorHandling(myForm,data.formControlName,data.emailValidation)">
+                <span class="errorMessage">
+                    {{data.errorMessageEmail}}</span>
+                </mat-error>
+        </mat-form-field>
+
     </div>
     </ng-container>
     <div class="text-center mb-2 mt-2">
