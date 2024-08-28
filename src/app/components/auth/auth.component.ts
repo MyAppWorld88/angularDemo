@@ -13,5 +13,9 @@ import { PrimengModule } from '../../primeng/primeng.module';
   styleUrl: './auth.component.scss'
 })
 export class AuthComponent {
-
+  changeWidth:any
+  receivdData(data:any){
+    this.changeWidth=data;
+   console.log(data)
+  }
 }

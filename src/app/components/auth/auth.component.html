@@ -1,7 +1,7 @@
 
 <div class="main-container">
-    <div class="side-nav">
-       <app-sidebar></app-sidebar>
+    <div class="side-nav"  [ngClass]="changeWidth === 'change'?'changeSidebarWidth': ''">
+       <app-sidebar (changeWidth)="receivdData($event)"></app-sidebar>
     </div>
     <div class="main">
         

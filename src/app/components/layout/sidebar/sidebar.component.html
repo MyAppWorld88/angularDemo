@@ -3,19 +3,19 @@
   <a routerLink="dashboard" >
     <div class="nav-item" routerLinkActive="active" >
       <fa-icon [icon]="faDashboard"></fa-icon>
-      <span>Dashboard</span>
+      <span *ngIf="isSidebarClosed">Dashboard</span>
     </div>
   </a>
   <a routerLink="myform/mydata"> 
     <div class="nav-item" routerLinkActive="active">
       <fa-icon [icon]="faCoffee" ></fa-icon>
-      <span>Form Split</span>
+      <span *ngIf="isSidebarClosed">Form Split</span>
     </div>
   </a>
   <a routerLink="dynamic/form" > 
     <div class="nav-item" routerLinkActive="active">
         <fa-icon [icon]="faCoffee" ></fa-icon>
-        <span>Dynamic Form</span>
+        <span *ngIf="isSidebarClosed">Dynamic Form</span>
       </div>
   </a>
     <!-- <div class="nav-item">
@@ -44,10 +44,14 @@
     </div> -->
 </div>
  <div>    
-    <button class="btn btn-primary btn-sm mx-auto" style="display: block;
+    <button *ngIf="!isSidebarClosed" class="btn btn-primary btn-sm mx-auto" style="display: block;
         background-color: inherit;
         font-size: 32px;
-        border: none;"><fa-icon [icon]="faCircleRight"></fa-icon></button>
+        border: none;"><fa-icon [icon]="faCircleRight" (click)="changeWidthData()"></fa-icon></button>
+    <button *ngIf="isSidebarClosed" class="btn btn-primary btn-sm mx-auto" style="display: block;
+    background-color: inherit;
+    font-size: 32px;
+    border: none;"><fa-icon [icon]="faCircleLeft" (click)="changeWidthData()"></fa-icon></button>        
   
   </div>
  

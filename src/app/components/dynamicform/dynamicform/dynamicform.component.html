@@ -1,53 +1,57 @@
 <h3>Dynamic Form</h3>
 <form [formGroup]="myForm" (ngSubmit)="submit()">
 <div class="row col-md-12" >
-    <div class="col-md-4">
+    <ng-container *ngFor="let data of formConfig">
+    <div class="col-md-4" *ngIf="data.type=='text'">
         <mat-form-field class="d-block">
-            <mat-label>Name</mat-label>
-            <input matInput autocomplete="off" type="text" matTooltip="Name" formControlName="name"
-               required>
+            <mat-label>{{data.label}}</mat-label>
+            <input matInput  autocomplete="off" type="data.type" matTooltip="data.placeholder" formControlName="{{data.formControlName}}"
+            >
                 <mat-error class="err-msgs"
-                
-                *ngIf="errorHandling(myForm,'name','required')">
+                *ngIf="errorHandling(myForm,data.formControlName,data.isRequired)">
                 <span class="errorMessage">
                   Please Enter name.</span>
               </mat-error>
         </mat-form-field>
+
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4" *ngIf="data.type=='select'">
 
         <mat-form-field class="d-block">
-            <mat-label>Select</mat-label>
-            <mat-select formControlName="selectCount">
-              <mat-option value="one">First option</mat-option>
-              <mat-option value="two">Second option</mat-option>
+            <mat-label>{{data.label}}</mat-label>
+            <mat-select formControlName="{{data.formControlName}}">
+              <mat-option [value]="op.value" *ngFor="let op of data.options">{{op.label}}</mat-option>
             </mat-select>
                 <mat-error class="err-msgs"
-                *ngIf="errorHandling(myForm,'selectCount','required')">
+                *ngIf="errorHandling(myForm,data.formControlName,data.isRequired)">
                 <span class="errorMessage">
-                  Please Enter mBNumber.</span>
+                  Please Enter Country.</span>
               </mat-error>
         </mat-form-field>
     </div>
-    <div class="col-md-4">
+    
+    <div class="col-md-4" *ngIf="data.type=='textarea'">
         <mat-form-field class="d-block">
-
-                <mat-label>Textarea</mat-label>
-                <textarea matInput formControlName="textArea"></textarea>
+                <mat-label>{{data.label}}</mat-label>
+                <textarea matInput formControlName="{{data.formControlName}}"></textarea>
                 <mat-error class="err-msgs"
-                *ngIf="errorHandling(myForm,'textArea','required')">
+                *ngIf="errorHandling(myForm,data.formControlName,data.isRequired)">
                 <span class="errorMessage">
                   Please Enter.</span>
               </mat-error>
         </mat-form-field>
     </div>
-    <div class="col-md-6">
-        <label>Float label radio button</label>
-        <mat-radio-group formControlName="floatLabelControl">
-          <mat-radio-button value="auto">Auto</mat-radio-button>
-          <mat-radio-button value="always">Always</mat-radio-button>
+    <div class="col-md-6" *ngIf="data.type=='radio'">
+        <label>{{data.label}}</label>
+        <mat-radio-group formControlName="{{data.formControlName}}">
+          <mat-radio-button [value]="gender.value" *ngFor="let gender of data.options">{{gender.label}}</mat-radio-button>
         </mat-radio-group>
+    </div>
+    </ng-container>
+    <div class="text-center mb-2 mt-2">
+        <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
     </div>
 </div>
 
 </form>
+{{myForm.value|json}}

@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild, output } from '@angular/core';
 import { Sidebar } from 'primeng/sidebar';
-import { faDashboard,faBars,faCoffee,faCircleRight} from '@fortawesome/free-solid-svg-icons';
+import { faDashboard,faBars,faCoffee,faCircleRight,faCircleLeft} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-sidebar',
   standalone: false,
@@ -8,17 +8,25 @@ import { faDashboard,faBars,faCoffee,faCircleRight} from '@fortawesome/free-soli
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent implements OnInit{
+  @Output() changeWidth = new EventEmitter<any>();
   faDashboard = faDashboard;
   faBars = faBars;
   faCoffee=faCoffee;
   faCircleRight=faCircleRight;
-  isSidebarClosed = false;
+  faCircleLeft=faCircleLeft;
+  isSidebarClosed = true;
 
   toggleSidebar() {
     this.isSidebarClosed = !this.isSidebarClosed;
   }
   showFiller = false;
   ngOnInit(): void {
+
+  }
+  changeWidthData() {
+    this.toggleSidebar();
+    const data = this.isSidebarClosed==false?'change':'notChange';
+    this.changeWidth.emit(data);
 
   }
   

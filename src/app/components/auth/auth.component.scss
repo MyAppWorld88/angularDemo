@@ -15,14 +15,18 @@
     .side-nav.min-width-changed {
         width: 100px;
         min-width: 100px;
-        // @media only screen and (min-width: 1200px) {
-        //     width: 350px;
-        //     min-width: 230px;
-        //   }
+        @media only screen and (min-width: 1200px) {
+            width: 350px;
+            min-width: 230px;
+          }
     }
     .main {
       padding: 30px;
       width: 100%;
+    }
+    .changeSidebarWidth{
+      width: 104px;
+      min-width: 105px;
     }
   }
 
