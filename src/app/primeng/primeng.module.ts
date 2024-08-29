@@ -109,8 +109,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSelectModule} from '@angular/material/select';
-
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 @NgModule({
   declarations: [],
   imports: [
@@ -222,6 +222,9 @@ import {MatSelectModule} from '@angular/material/select';
   FontAwesomeModule,
   MatSidenavModule,
   MatSelectModule,
+  MatDatepickerModule,
+  NgxMatDatetimePickerModule, 
+  NgxMatTimepickerModule 
   ],
   exports:[
     AvatarModule,
@@ -332,6 +335,9 @@ import {MatSelectModule} from '@angular/material/select';
   FontAwesomeModule,
   MatSidenavModule,
   MatSelectModule,
+  MatDatepickerModule,
+  NgxMatDatetimePickerModule,
+   NgxMatTimepickerModule 
   ],
   providers: [
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},

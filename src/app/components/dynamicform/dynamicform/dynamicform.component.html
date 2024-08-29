@@ -1,8 +1,8 @@
 <h3>Dynamic Form</h3>
 <form [formGroup]="myForm" (ngSubmit)="submit()">
 <div class="row col-md-12" >
-    <ng-container *ngFor="let data of formConfig;let i=index;">
-    <div class="col-md-4 mb-2" *ngIf="data.type=='select' && data.visibility===true">
+    <ng-container *ngFor="let data of selectedFormsInput;let i=index;">
+    <div class="{{data?.width?data?.width:'col-md-4'}} mb-2" *ngIf="data?.type=='select' && data?.visibility===true">
 
         <mat-form-field class="d-block">
             <mat-label>{{data.label}}</mat-label>
@@ -16,7 +16,7 @@
               </mat-error>
         </mat-form-field>
     </div>   
-    <div class="col-md-4 mb-2" *ngIf="data.type=='radio' && data.visibility===true">
+    <div class="{{data?.width?data?.width:'col-md-4'}} mb-2" *ngIf="data?.type=='radio' && data?.visibility===true">
 
         <mat-label>{{data.label}}</mat-label>
         <mat-radio-group formControlName="{{data.formControlName}}" (change)="data.label=='Select Residency'?checkAbroadAddr($event.value):''">
@@ -30,7 +30,7 @@
       </mat-error>
 
     </div>
-    <div class="col-md-4 mb-2" *ngIf="data.type=='textarea' && data.visibility===true">
+    <div class="{{data?.width?data?.width:'col-md-4'}} mb-2" *ngIf="data?.type=='textarea' && data?.visibility===true">
         <mat-form-field class="d-block">
                 <mat-label>{{data.label}}</mat-label>
                 <textarea matInput formControlName="{{data.formControlName}}"></textarea>
@@ -41,7 +41,7 @@
               </mat-error>
         </mat-form-field>
     </div>
-    <div class="col-md-4 mb-2" *ngIf="data.type=='text' && data.visibility===true">
+    <div class="{{data?.width?data?.width:'col-md-4'}} mb-2" *ngIf="data?.type=='text' && data?.visibility===true">
         <mat-form-field class="d-block">
             <mat-label>{{data.label}}</mat-label>
             <input matInput  autocomplete="off" type="data.type" matTooltip="data.placeholder" formControlName="{{data.formControlName}}" maxlength="{{data.maxValue}}"
@@ -59,9 +59,24 @@
         </mat-form-field>
 
     </div>
+    <div class="{{data?.width?data?.width:'col-md-4'}} mb-2" *ngIf="data?.type=='date' && data?.visibility===true">
+        <mat-form-field appearance="fill" class="d-block">
+            <mat-label>{{data.label}}</mat-label>
+            <input matInput [matDatepicker]="picker11" formControlName="{{data.formControlName}}">
+            <mat-datepicker-toggle matSuffix [for]="picker11"></mat-datepicker-toggle>
+            <mat-datepicker #picker11></mat-datepicker>
+            <mat-error class="err-msgs"
+            *ngIf="errorHandling(myForm,data.formControlName,data.isRequired)">
+            <span class="errorMessage">
+                {{data.errorMessage}}</span>
+            </mat-error>
+        </mat-form-field>
+    </div>
+
     </ng-container>
     <div class="text-center mb-2 mt-2">
-        <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>&nbsp;&nbsp;
+        <button type="submit" class="btn btn-danger btn-sm" (click)="reset()">Clear</button>
     </div>
 </div>
 
