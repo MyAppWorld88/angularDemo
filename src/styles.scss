@@ -45,12 +45,16 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #012645;
 }
+.mat-mdc-tab-group{
+  width: 100%!important;
+  min-width: 40%
+}
 .exam-tabing-steps {
   float: left;
   width: 100%;
 }
 
-.exam-tabing-steps .mat-tab-header .mat-tab-label-container .mat-tab-label-active {
+.exam-tabing-steps .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab-labels .mdc-tab--active {
   background: #007bff;
   color: #fff !important;
   z-index: 99999;
@@ -58,9 +62,16 @@ body {
   width: auto;
   word-break: break-all;
   white-space: normal;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 5px;
+}
+.exam-tabing-steps .mat-mdc-tab-header .mat-mdc-tab-label-container .mat-mdc-tab-labels .mdc-tab--active .mdc-tab-indicator .mdc-tab-indicator__content{
+  border-color: #fff!important;
 }
 
-.exam-tabing-steps .mat-tab-header .mat-tab-label::after {
+.exam-tabing-steps .mat-mdc-tab-header .mdc-tab--active::after {
   content: "";
   border: solid white;
   border-width: 0;
@@ -69,10 +80,11 @@ body {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   position: absolute;
-  right: -17px;
+  right: -7px;
+  margin: -6px;
 }
 
-.exam-tabing-steps .mat-tab-label-active::after {
+.exam-tabing-steps .mdc-tab--active::after {
   border-width: 0 20px 20px 0 !important;
   display: inline-block;
   padding: 20px;
@@ -82,11 +94,13 @@ body {
   right: -17px;
 }
 
-.exam-tabing-steps .mat-tab-header .mat-tab-label:last-child::after {
+.exam-tabing-steps .mat-mdc-tab-header .mdc-tab--active:last-child::after {
   border: 0px !important;
+
 }
 
-.exam-tabing-steps .mat-tab-header .mat-tab-label {
+
+.exam-tabing-steps .mat-mdc-tab-header .mdc-tab--active {
   background: #ccc;
   color: #000000;
   z-index: 99999;
