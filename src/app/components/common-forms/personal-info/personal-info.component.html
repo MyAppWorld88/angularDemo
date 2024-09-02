@@ -5,15 +5,13 @@
             <div class="col-md-4">
                 <mat-form-field class="d-block">
                     <mat-label>Name</mat-label>
-                    <input matInput autocomplete="off" type="text" matTooltip="Name" formControlName="name"
-                       required>
-                        <mat-error class="err-msgs"
-                        
-                        *ngIf="errorHandling(form,'basicInfo','name','required')">
+                    <input matInput autocomplete="off" type="text" matTooltip="Name" formControlName="name" >
+                       <mat-error class="err-msgs" *ngIf="errorHandling(form,'basicInfo','name','required') && rootFormGroup.submitted">
                         <span class="errorMessage">
                           Please Enter name.</span>
                       </mat-error>
                 </mat-form-field>
+
             </div>
             <div class="col-md-4">
                 <mat-form-field class="d-block">

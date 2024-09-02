@@ -45,5 +45,56 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #012645;
 }
+.exam-tabing-steps {
+  float: left;
+  width: 100%;
+}
+
+.exam-tabing-steps .mat-tab-header .mat-tab-label-container .mat-tab-label-active {
+  background: #007bff;
+  color: #fff !important;
+  z-index: 99999;
+  min-width: 150px;
+  width: auto;
+  word-break: break-all;
+  white-space: normal;
+}
+
+.exam-tabing-steps .mat-tab-header .mat-tab-label::after {
+  content: "";
+  border: solid white;
+  border-width: 0;
+  display: inline-block;
+  padding: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  position: absolute;
+  right: -17px;
+}
+
+.exam-tabing-steps .mat-tab-label-active::after {
+  border-width: 0 20px 20px 0 !important;
+  display: inline-block;
+  padding: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  position: absolute;
+  right: -17px;
+}
+
+.exam-tabing-steps .mat-tab-header .mat-tab-label:last-child::after {
+  border: 0px !important;
+}
+
+.exam-tabing-steps .mat-tab-header .mat-tab-label {
+  background: #ccc;
+  color: #000000;
+  z-index: 99999;
+  min-width: 140px;
+  width: auto;
+  word-break: break-all;
+  margin: 0px 20px 20px 0px;
+  white-space: normal;
+}
 
 

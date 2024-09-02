@@ -17,7 +17,7 @@ export class DynamicformComponent implements OnInit{
   myForm!:FormGroup;
   fieldArragement=[
     {'position':1,'uniqueName':'name'},
-    {'position':2,'uniqueName':'email'},
+    {'position':2,'uniqueName':'email',},
     {'position':3,'uniqueName':'gender'},
     {'position':4,'uniqueName':'dob'},
     {'position':5,'uniqueName':'mobileNumber'},
@@ -25,7 +25,7 @@ export class DynamicformComponent implements OnInit{
     {'position':7,'uniqueName':'state'},
     {'position':8,'uniqueName':'textArea'},
     {'position':9,'uniqueName':'address'},
-    {'position':10,'uniqueName':'residency'},
+    {'position':10,'uniqueName':'residency','width':'col-md-12'},
     {'position':11,'uniqueName':'abroadAddress'},
    
   ]
@@ -42,6 +42,8 @@ export class DynamicformComponent implements OnInit{
          item2.uniqueName === item1.uniqueName);
       if (match) {
         match.fieldNumber=item1.position;//position;
+        match.width=item1.width;
+        match.formControlName=item1.formControlName?item1.formControlName:match.formControlName;
         return match; 
       }
     });

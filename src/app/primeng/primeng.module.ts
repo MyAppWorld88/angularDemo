@@ -111,6 +111,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+import { MatTabsModule } from '@angular/material/tabs'; 
 @NgModule({
   declarations: [],
   imports: [
@@ -224,7 +225,8 @@ import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-mat
   MatSelectModule,
   MatDatepickerModule,
   NgxMatDatetimePickerModule, 
-  NgxMatTimepickerModule 
+  NgxMatTimepickerModule ,
+  MatTabsModule
   ],
   exports:[
     AvatarModule,
@@ -337,7 +339,8 @@ import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-mat
   MatSelectModule,
   MatDatepickerModule,
   NgxMatDatetimePickerModule,
-   NgxMatTimepickerModule 
+   NgxMatTimepickerModule,
+   MatTabsModule 
   ],
   providers: [
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},

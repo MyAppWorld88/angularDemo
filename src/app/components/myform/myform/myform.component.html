@@ -1,8 +1,18 @@
 <h3>Split Form</h3>
+<div class="card" style="width: 100%;display: block;overflow-x: hidden; padding:30px">
+ <!-- <div>
+    <mat-tab-group animationDuration="0ms" class="exam-tabing-steps">
+        <mat-tab label="First" style="width: 300px!important;">Content 1</mat-tab>
+        <mat-tab label="Second">Content 2</mat-tab>
+        <mat-tab label="Third">Content 3</mat-tab>
+    </mat-tab-group>
+ </div> -->
+
+
 <form [formGroup]="myForm" (ngSubmit)="submit()">
     <div class="col-md-12 overflow-hidden">
         <!-- personal-info -->
-        <app-personal-info></app-personal-info>
+        <app-personal-info [events]="eventsSubject.asObservable()"></app-personal-info>
 
         <!-- address -->
         <app-address></app-address>
@@ -13,5 +23,6 @@
         <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
     </div>
 </form>
+</div>
 {{myForm.value|json}}
 
